@@ -20,7 +20,7 @@ public class DatabaseConnection {
        // Class.forName( DB_Driver ); 
         //con = DriverManager.getConnection(DB_URL, DB_User, DB_Pwd);
         Class.forName("com.mysql.jdbc.Driver"); 
-            con=DriverManager.getConnection("jdbc:mysql://localhost/online_examination_portal?"+ "user='root' & password= ' '");
+            con=DriverManager.getConnection("jdbc:mysql://localhost:3306/Online_Examination_Portal","root","");
         System.out.println("Connected");
     }
     
@@ -41,7 +41,7 @@ public class DatabaseConnection {
     }
     
     
-    private final String DB_URL = "jdbc:mysql://localhost/online_examination_portal?";
+    private final String DB_URL = "jdbc:mysql://localhost:3306/Online_Examination_Portal";
     private final String DB_User = "";
     private final String DB_Pwd = "";
     private final String DB_Driver = "com.mysql.jdbc.Driver";

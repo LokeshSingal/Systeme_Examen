@@ -20,6 +20,7 @@ public class test {
         c.setCourseID("IT615");
         c.setCourseName("Enterprise Computing");
         c.setCourseDesc("Insert Demo");
+        
         if(cd.insert(c))
         {
             System.out.println("Inserted");

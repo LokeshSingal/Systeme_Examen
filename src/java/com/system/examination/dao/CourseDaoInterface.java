@@ -8,6 +8,7 @@ package com.system.examination.dao;
 
 import com.system.examination.model.Course;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,5 +16,9 @@ import java.sql.SQLException;
  */
 public interface CourseDaoInterface {
     public boolean insert(Course c) throws SQLException;
+    public boolean delete(String c_id) throws SQLException;
+    public boolean update(Course c) throws SQLException;
+    public ArrayList<Course> getAll() throws SQLException;
+    
     
 }
