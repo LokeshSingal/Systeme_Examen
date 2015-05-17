@@ -43,12 +43,13 @@ public class CourseDaoImple implements CourseDaoInterface{
     public boolean delete(String c_id) throws SQLException {
         
         Statement stmt = con.createStatement();
-        String query="DELETE FROM course WHERE c_id=' "+ c_id +" '; ";
+        String query="DELETE FROM course WHERE c_id='"+ c_id +"' ";
         
-        if(stmt.execute(query))
-            return true;
-        else
-            return false;        
+        int n =stmt.executeUpdate(query);
+      if(n > 0 )
+          return true;
+      else
+          return false;
     }
 
     @Override

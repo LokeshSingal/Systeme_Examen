@@ -21,9 +21,9 @@ public class test {
         c.setCourseName("Enterprise Computing");
         c.setCourseDesc("Insert Demo");
         
-        if(cd.insert(c))
+        if(cd.delete(c.getCourseID()))
         {
-            System.out.println("Inserted");
+            System.out.println("Deleted");
         }
     }
 }
