@@ -26,7 +26,7 @@ public class CourseDaoImple implements CourseDaoInterface{
     
     public CourseDaoImple() throws SQLException,ClassNotFoundException
     {
-        con=DatabaseConnection.getInstance().getConnection();
+        this.con=DatabaseConnection.getInstance().getConnection();
     }
 
     @Override
