@@ -11,4 +11,53 @@ package com.system.examination.model;
  */
 public class Result {
     
+    private int R_exam_id;
+    private int R_user_id;
+    private String R_ques_id;
+    private String Submission;
+    private boolean Evaluation;
+
+    public int getR_exam_id() {
+        return R_exam_id;
+    }
+
+    public int getR_user_id() {
+        return R_user_id;
+    }
+
+    public String getR_ques_id() {
+        return R_ques_id;
+    }
+
+    public String getSubmission() {
+        return Submission;
+    }
+
+    public boolean isEvaluation() {
+        return Evaluation;
+    }
+
+    public void setR_exam_id(int R_exam_id) {
+        this.R_exam_id = R_exam_id;
+    }
+
+    public void setR_user_id(int R_user_id) {
+        this.R_user_id = R_user_id;
+    }
+
+    public void setR_ques_id(String R_ques_id) {
+        this.R_ques_id = R_ques_id;
+    }
+
+    public void setSubmission(String Submission) {
+        this.Submission = Submission;
+    }
+
+    public void setEvaluation(boolean Evaluation) {
+        this.Evaluation = Evaluation;
+    }
+    
+    
+    
+    
 }
