@@ -4,8 +4,10 @@
  * and open the template in the editor.
  */
 
-package com.system.examination.dao;
+package com.system.examination.DaoImplementaion;
 
+import com.system.examination.DaoInterface.CourseDaoInterface;
+import com.system.examination.DBConnection.DatabaseConnection;
 import com.system.examination.model.Course;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -54,13 +56,40 @@ public class CourseDaoImple implements CourseDaoInterface{
 
     @Override
     public boolean update(Course c) throws SQLException {
-        return false;
+        
+        Statement stmt = con.createStatement();
+        String query=" UPDATE course set c_name = '" + c.getCourseName() + 
+                "'," + "c_desc = '" + c.getCourseDesc() + 
+                "' " +"WHERE c_id = '" + c.getCourseID() + "' ";
+        
+        int n =stmt.executeUpdate(query);
+      if(n > 0 )
+          return true;
+      else
+          return false;
+        
         
     }
 
     @Override
     public ArrayList<Course> getAll() throws SQLException {
-        return null;
+        
+        ArrayList<Course> course_list = new ArrayList<Course>();
+        Course c;
+        Statement stmt;
+        stmt = con.createStatement();        
+        ResultSet rs = stmt.executeQuery("SELECT * FROM course");
+        while ( rs.next() ) {
+            c = new Course();
+            c.setCourseID(rs.getString("c_id") );
+            c.setCourseName(rs.getString("c_name"));
+            c.setCourseDesc(rs.getString("c_desc"));
+            
+            course_list.add( c );
+        }        
+        
+        return course_list;
+        
         
     }
 

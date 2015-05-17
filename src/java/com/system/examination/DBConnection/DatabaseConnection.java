@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.system.examination.dao;
+package com.system.examination.DBConnection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
