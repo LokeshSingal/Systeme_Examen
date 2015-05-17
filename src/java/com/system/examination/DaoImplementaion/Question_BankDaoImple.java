@@ -19,7 +19,7 @@ public class Question_BankDaoImple implements Question_BankDaoInterface{
     
     @Override
     public boolean insert(Question_Bank q_bank) throws SQLException {
-        Statement stmt = con.createStatement();
+ /*       Statement stmt = con.createStatement();
       String query="INSERT INTO exam_qestion values('"+
               +"','"+
                +"','"+
@@ -32,7 +32,7 @@ public class Question_BankDaoImple implements Question_BankDaoInterface{
       int n =stmt.executeUpdate(query);
       if(n > 0 )
           return true;
-      else
+      else*/
           return false;
     }
 
@@ -53,4 +53,4 @@ public class Question_BankDaoImple implements Question_BankDaoInterface{
     }
 
     
-}
+

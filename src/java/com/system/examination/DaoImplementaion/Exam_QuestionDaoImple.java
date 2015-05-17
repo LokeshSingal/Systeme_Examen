@@ -26,7 +26,7 @@ public class Exam_QuestionDaoImple implements Exam_QuestionDaoInterface{
     
     @Override
     public boolean insert(Exam_Questions e_ques) throws SQLException {
-          Statement stmt = con.createStatement();
+          /*Statement stmt = con.createStatement();
       String query="INSERT INTO exam_qestion values('"+
               +"','"+
                +"','"+
@@ -39,7 +39,7 @@ public class Exam_QuestionDaoImple implements Exam_QuestionDaoInterface{
       int n =stmt.executeUpdate(query);
       if(n > 0 )
           return true;
-      else
+      else*/
           return false;
     }
 
