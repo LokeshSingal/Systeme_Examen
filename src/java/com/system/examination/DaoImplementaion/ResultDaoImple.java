@@ -31,12 +31,12 @@ public class ResultDaoImple implements ResultDaoInterface {
     @Override
     public boolean insert(Result result) throws SQLException {
       Statement stmt = con.createStatement();
-      String query="INSERT INTO user_info values('"+
+      String query="INSERT INTO result values('"+
               result.getR_exam_id()+"','"+
               result.getR_user_id()+"','"+
               result.getR_ques_id()+"','"+
               result.getSubmission()+"','"+
-              result.isEvaluation()+"' )";
+              result.getEvaluation()+"' )";
       
       int n =stmt.executeUpdate(query);
       if(n > 0 )
@@ -51,14 +51,14 @@ public class ResultDaoImple implements ResultDaoInterface {
         Result result;
         Statement stmt;
         stmt = con.createStatement();        
-        ResultSet rs = stmt.executeQuery("SELECT * FROM user_info");
+        ResultSet rs = stmt.executeQuery("SELECT * FROM result");
         while ( rs.next() ) {
             result = new Result();
             result.setR_exam_id(rs.getInt("exam_id") );
             result.setR_ques_id(rs.getString("ques_id"));
             result.setR_user_id(rs.getInt("user_id"));
             result.setSubmission(rs.getString("submission"));
-            result.setEvaluation(rs.getBoolean("evaluation"));
+            result.setEvaluation(rs.getInt("evaluation"));
             
             userinfo.add( result );
         }        

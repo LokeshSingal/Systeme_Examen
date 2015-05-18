@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public interface Question_BankDaoInterface {
     
     public boolean insert(Question_Bank q_bank) throws SQLException;
-    public boolean delete(int q_id) throws SQLException;
+    public boolean delete(String q_id) throws SQLException;
     public boolean update(Question_Bank q_bank) throws SQLException;
     public ArrayList<Question_Bank> getAll() throws SQLException;
     

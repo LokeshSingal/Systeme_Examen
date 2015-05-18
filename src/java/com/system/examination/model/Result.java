@@ -15,7 +15,7 @@ public class Result {
     private int R_user_id;
     private String R_ques_id;
     private String Submission;
-    private boolean Evaluation;
+    private int Evaluation;
 
     public int getR_exam_id() {
         return R_exam_id;
@@ -33,7 +33,7 @@ public class Result {
         return Submission;
     }
 
-    public boolean isEvaluation() {
+    public int getEvaluation() {
         return Evaluation;
     }
 
@@ -53,11 +53,9 @@ public class Result {
         this.Submission = Submission;
     }
 
-    public void setEvaluation(boolean Evaluation) {
+    public void setEvaluation(int Evaluation) {
         this.Evaluation = Evaluation;
     }
-    
-    
-    
+
     
 }

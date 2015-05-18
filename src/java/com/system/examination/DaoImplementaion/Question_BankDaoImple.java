@@ -50,9 +50,9 @@ public class Question_BankDaoImple implements Question_BankDaoInterface{
     }
 
     @Override
-    public boolean delete(int q_id) throws SQLException {
+    public boolean delete(String q_id) throws SQLException {
         Statement stmt = con.createStatement();
-        String query="DELETE FROM question_bank WHERE question_bank='"+ q_id +"' ";
+        String query="DELETE FROM question_bank WHERE q_id='"+ q_id +"' ";
         
         int n =stmt.executeUpdate(query);
       if(n > 0 )
