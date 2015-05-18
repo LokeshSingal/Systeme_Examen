@@ -34,14 +34,14 @@ public class Exam_ListDaoImple implements Exam_ListDaoInterface{
       String query="INSERT INTO exam_list values('"+
               el.getExam_id()+"','"+
               el.getInstructor_id() +"','"+
-              el.getExam_desc()+"',"+
+              el.getExam_desc()+"','"+
               el.getNo_of_ques()+"','"+
               el.getDuration()+"','"+
-              el.isShow_instant_result()+"','"+
+              el.getShow_instant_result()+"','"+
               el.getDeclare_date()+"','"+
               el.getTotal_marks()+"','"+
-              el.getUsername()+"','"+
-              el.getPassword()+"' )";
+              el.getExam_username()+"','"+
+              el.getExam_password()+"' )";
       
       int n =stmt.executeUpdate(query);
       if(n > 0 )
@@ -69,11 +69,11 @@ public class Exam_ListDaoImple implements Exam_ListDaoInterface{
                 "'," + "exam_desc = '" + el.getExam_desc()+ 
                 "'," + "no_of_ques = '"+ el.getNo_of_ques()+
                 "'," + "duration = '" + el.getDuration()+
-                "'," + "show_instant_reslut = '" + el.isShow_instant_result()+
+                "'," + "show_instant_result = '" + el.getShow_instant_result()+
                 "'," + "declare_date = '"+ el.getDeclare_date()+
                 "'," + "total_marks = '"+ el.getTotal_marks()+
-                "'," + "username = '"+ el.getUsername()+
-                "'," + "password = '"+ el.getPassword()+
+                "'," + "username = '"+ el.getExam_username()+
+                "'," + "password = '"+ el.getExam_password()+
                 "'"  + "WHERE exam_id = '" + el.getExam_id()+ "' ";
       
          int n =stmt.executeUpdate(query);
@@ -99,11 +99,11 @@ public class Exam_ListDaoImple implements Exam_ListDaoInterface{
             el.setExam_desc(rs.getString("exam_desc"));
             el.setNo_of_ques(rs.getInt("no_of_ques"));
             el.setDuration(rs.getTime("duration"));
-            el.setShow_instant_result(rs.getBoolean("show_instant_result"));
+            el.setShow_instant_result(rs.getInt("show_instant_result"));
             el.setDeclare_date(rs.getDate("declare_date"));
             el.setTotal_marks(rs.getInt("total_marks"));
-            el.setUsername(rs.getString("username"));
-            el.setPassword(rs.getString("password"));
+            el.setExam_username(rs.getString("username"));
+            el.setExam_password(rs.getString("password"));
             
             exam_list.add( el );
         }        

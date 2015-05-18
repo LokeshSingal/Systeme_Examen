@@ -15,6 +15,17 @@ public class User_info {
     private String name;
     private String Image;
     private String Institute_name;
+    private String Program;
+    private String Gender;
+
+    public String getProgram() {
+        return Program;
+    }
+
+    public String getGender() {
+        return Gender;
+    }
+    
 
     public int getUser_id() {
         return user_id;
@@ -46,6 +57,14 @@ public class User_info {
 
     public void setInstitute_name(String Institute_name) {
         this.Institute_name = Institute_name;
+    }
+
+    public void setProgram(String Program) {
+        this.Program = Program;
+    }
+
+    public void setGender(String Gender) {
+        this.Gender = Gender;
     }
     
     

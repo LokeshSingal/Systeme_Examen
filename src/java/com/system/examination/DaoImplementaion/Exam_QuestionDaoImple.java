@@ -30,7 +30,7 @@ public class Exam_QuestionDaoImple implements Exam_QuestionDaoInterface{
       String query="INSERT INTO exam_qestion values('"+
               +"','"+
                +"','"+
-              +"',"+
+              +"','"+
               +"','"+
               +"','"+
               +"','"+

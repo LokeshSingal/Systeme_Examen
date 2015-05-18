@@ -20,7 +20,7 @@ public class Exam_list {
     private String exam_desc;
     private int no_of_ques;
     private Time duration;
-    private boolean Show_instant_result;
+    private int Show_instant_result;
     private Date declare_date;
     private int total_marks;
     private String exam_username;
@@ -46,7 +46,7 @@ public class Exam_list {
         return duration;
     }
 
-    public boolean isShow_instant_result() {
+    public int getShow_instant_result() {
         return Show_instant_result;
     }
 
@@ -58,11 +58,11 @@ public class Exam_list {
         return total_marks;
     }
 
-    public String getUsername() {
+    public String getExam_username() {
         return exam_username;
     }
 
-    public String getPassword() {
+    public String getExam_password() {
         return exam_password;
     }
 
@@ -86,7 +86,7 @@ public class Exam_list {
         this.duration = duration;
     }
 
-    public void setShow_instant_result(boolean Show_instant_result) {
+    public void setShow_instant_result(int Show_instant_result) {
         this.Show_instant_result = Show_instant_result;
     }
 
@@ -98,13 +98,15 @@ public class Exam_list {
         this.total_marks = total_marks;
     }
 
-    public void setUsername(String exam_username) {
+    public void setExam_username(String exam_username) {
         this.exam_username = exam_username;
     }
 
-    public void setPassword(String exam_password) {
+    public void setExam_password(String exam_password) {
         this.exam_password = exam_password;
     }
+
     
     
+   
 }

@@ -35,7 +35,7 @@ public class LoginDaoImple implements LoginDaoInterface  {
       String query="INSERT INTO login_credentials values('"+
               l.getUser_id()+"','"+
               l.getUser_username() +"','"+
-              l.getUser_password()+"',"+
+              l.getUser_password()+"','"+
               l.getUser_email()+"','"+
               l.isPri_Instructor()+"','"+
               l.isPri_Student()+"','"+
