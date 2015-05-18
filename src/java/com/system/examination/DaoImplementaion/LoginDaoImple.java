@@ -23,7 +23,7 @@ public class LoginDaoImple implements LoginDaoInterface  {
     
     private final Connection con;
 
-    public LoginDaoImple(Connection con) throws SQLException,ClassNotFoundException {
+    public LoginDaoImple() throws SQLException,ClassNotFoundException {
         this.con = DatabaseConnection.getInstance().getConnection();
         
         
@@ -37,9 +37,9 @@ public class LoginDaoImple implements LoginDaoInterface  {
               l.getUser_username() +"','"+
               l.getUser_password()+"','"+
               l.getUser_email()+"','"+
-              l.isPri_Instructor()+"','"+
-              l.isPri_Student()+"','"+
-              l.isPri_Admin()+"' )";
+              l.getPri_Instructor()+"','"+
+              l.getPri_Student()+"','"+
+              l.getPri_Admin()+"' )";
       
       int n =stmt.executeUpdate(query);
       if(n > 0 )
@@ -67,10 +67,10 @@ public class LoginDaoImple implements LoginDaoInterface  {
        String query=" UPDATE login_credentials set username = '" + l.getUser_username()+ 
                 "'," + "password = '" + l.getUser_password()+ 
                 "'," + "email = '"+ l.getUser_email() +
-                "'," + "instructor = '" + l.isPri_Instructor() +
-                "'," + "student = '" + l.isPri_Student() +
-                "'," + "admin = '"+ l.isPri_Admin() +
-                "'"  + "WHERE c_id = '" + l.getUser_id() + "' ";
+                "'," + "instructor = '" + l.getPri_Instructor()+
+                "'," + "student = '" + l.getPri_Student()+
+                "'," + "admin = '"+ l.getPri_Admin()+
+                "'"  + "WHERE user_id = '" + l.getUser_id() + "' ";
       
          int n =stmt.executeUpdate(query);
       if(n > 0 )
@@ -94,9 +94,9 @@ public class LoginDaoImple implements LoginDaoInterface  {
             l.setUser_username(rs.getString("username"));
             l.setUser_password(rs.getString("password"));
             l.setUser_email(rs.getString("email"));
-            l.setPri_Instructor(rs.getBoolean("instructor"));
-            l.setPri_Student(rs.getBoolean("student"));
-            l.setPri_Admin(rs.getBoolean("admin"));
+            l.setPri_Instructor(rs.getInt("instructor"));
+            l.setPri_Student(rs.getInt("student"));
+            l.setPri_Admin(rs.getInt("admin"));
             
             User_list.add( l );
         }        

@@ -14,9 +14,9 @@ public class Login {
     private String user_username;
     private String user_password;
     private String user_email;
-    private boolean Pri_Instructor;
-    private boolean Pri_Student;
-    private boolean Pri_Admin;
+    private int Pri_Instructor;
+    private int Pri_Student;
+    private int Pri_Admin;
 
     public int getUser_id() {
         return user_id;
@@ -34,15 +34,15 @@ public class Login {
         return user_email;
     }
 
-    public boolean isPri_Instructor() {
+    public int getPri_Instructor() {
         return Pri_Instructor;
     }
 
-    public boolean isPri_Student() {
+    public int getPri_Student() {
         return Pri_Student;
     }
 
-    public boolean isPri_Admin() {
+    public int getPri_Admin() {
         return Pri_Admin;
     }
 
@@ -62,18 +62,18 @@ public class Login {
         this.user_email = user_email;
     }
 
-    public void setPri_Instructor(boolean Pri_Instructor) {
+    public void setPri_Instructor(int Pri_Instructor) {
         this.Pri_Instructor = Pri_Instructor;
     }
 
-    public void setPri_Student(boolean Pri_Student) {
+    public void setPri_Student(int Pri_Student) {
         this.Pri_Student = Pri_Student;
     }
 
-    public void setPri_Admin(boolean Pri_Admin) {
+    public void setPri_Admin(int Pri_Admin) {
         this.Pri_Admin = Pri_Admin;
     }
-    
+
     
     
     

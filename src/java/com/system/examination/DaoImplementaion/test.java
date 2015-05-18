@@ -7,11 +7,11 @@ package com.system.examination.DaoImplementaion;
 
 import com.system.examination.model.Course;
 import com.system.examination.model.Exam_list;
+import com.system.examination.model.Login;
 import com.system.examination.model.User_info;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Time;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
 
@@ -35,7 +35,7 @@ public class test {
         ui.setName("PMJ");
         ui.setProgram("Null");
         ui.setUser_id(123);
- /*
+/*
         if (uid.insert(ui)) {
             System.out.println("inserted in user_info");
         }
@@ -61,7 +61,56 @@ public class test {
         }
         
         
+        /*****************************      Login_Credentials TESTING OK ***************************/
+        LoginDaoImple ld = new LoginDaoImple();
+        Login l = new Login();
+        
+        l.setUser_id(123);
+        l.setUser_email("123@456.com updated");
+        l.setUser_username("lokesh");
+        l.setUser_password("lokesh");
+        l.setPri_Admin(1);
+        l.setPri_Instructor(1);
+        l.setPri_Student(0);
+        
+ /*     
+         if (ld.insert(l)) {
+            System.out.println("inserted in login_credentials");
+        }
+
+  /*      
+        if (ld.update(l)) {
+            System.out.println("updated login_credentials");
+        }
+/*
+        if (ld.delete(123)) {
+            System.out.println("deleted login_credentials");
+        }
 */
+        Object x = ld.getAll();
+        ArrayList<Login> list = (ArrayList<Login>) x;
+
+        for (Login login : list) {
+            System.out.println(login.getUser_id()+ ","
+                    + login.getUser_email()+ ","
+                    + login.getUser_username()+ ","
+                    + login.getUser_password()+ ","
+                    + login.getPri_Admin()+ ","
+                    + login.getPri_Student()+ ","
+                    + login.getPri_Instructor());
+        }
+        
+        
+        /*****************************      Exam_Question TESTING OK ***************************/
+        
+        
+        /*****************************      Result TESTING OK ***************************/
+        
+        
+        /*****************************      Question_Bank TESTING OK ***************************/
+        
+        
+
         /*****************************      Exam_list TESTING OK ***************************/
         
       
