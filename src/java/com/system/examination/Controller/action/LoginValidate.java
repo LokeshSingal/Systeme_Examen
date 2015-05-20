@@ -18,7 +18,7 @@ public class LoginValidate implements Action{
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse res) {
-        
+        return "LoginFail.jsp";
     }
     
 }
