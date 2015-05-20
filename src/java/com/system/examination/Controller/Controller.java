@@ -5,8 +5,10 @@
  */
 package com.system.examination.Controller;
 
+import com.system.examination.util.ObjectCreator;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Properties;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -36,7 +38,7 @@ public class Controller extends HttpServlet {
         //out.println( this.getServletContext().getRealPath(".") );
 
         if (theAction == null) {
-            theAction = "viewcat";
+            theAction = "login";
         }
 
         Action action = getActionFromConfig(theAction);
@@ -86,4 +88,17 @@ public class Controller extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+    private Action getActionFromConfig( String theAction ) 
+            throws ServletException, IOException{
+        Properties map = new Properties();
+        map.load( this.getClass().getClassLoader().getResourceAsStream( ACTION_MAPPING ));
+            
+        String action_class = map.getProperty( 
+                theAction.toLowerCase() );      
+        Action action = (Action) ObjectCreator
+                .createObject(action_class);       
+        return action;
+    }
+
+    private final static String ACTION_MAPPING = "com/system/examination/Controller/ActionMapping.properties"; 
 }

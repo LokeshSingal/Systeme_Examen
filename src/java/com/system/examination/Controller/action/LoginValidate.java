@@ -14,13 +14,10 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Kishan
  */
-public class ShowLoginForm implements Action{
+public class LoginValidate implements Action{
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse res) {
-        String view = "Logindemo.jsp";
-
-        return view;
         
     }
     
