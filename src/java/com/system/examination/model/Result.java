@@ -5,56 +5,58 @@
  */
 package com.system.examination.model;
 
+import java.sql.Date;
+
 /**
  *
  * @author lokesh
  */
 public class Result {
     
-    private int R_exam_id;
+    private int R_id;
     private int R_user_id;
-    private String R_ques_id;
-    private String Submission;
-    private int Evaluation;
+    private int R_exam_id;
+    private Date R_Date;
+    private int Score;
 
-    public int getR_exam_id() {
-        return R_exam_id;
+    public int getR_id() {
+        return R_id;
     }
 
     public int getR_user_id() {
         return R_user_id;
     }
 
-    public String getR_ques_id() {
-        return R_ques_id;
+    public int getR_exam_id() {
+        return R_exam_id;
     }
 
-    public String getSubmission() {
-        return Submission;
+    public Date getR_Date() {
+        return R_Date;
     }
 
-    public int getEvaluation() {
-        return Evaluation;
+    public int getScore() {
+        return Score;
     }
 
-    public void setR_exam_id(int R_exam_id) {
-        this.R_exam_id = R_exam_id;
+    public void setR_id(int R_id) {
+        this.R_id = R_id;
     }
 
     public void setR_user_id(int R_user_id) {
         this.R_user_id = R_user_id;
     }
 
-    public void setR_ques_id(String R_ques_id) {
-        this.R_ques_id = R_ques_id;
+    public void setR_exam_id(int R_exam_id) {
+        this.R_exam_id = R_exam_id;
     }
 
-    public void setSubmission(String Submission) {
-        this.Submission = Submission;
+    public void setR_Date(Date R_Date) {
+        this.R_Date = R_Date;
     }
 
-    public void setEvaluation(int Evaluation) {
-        this.Evaluation = Evaluation;
+    public void setScore(int Score) {
+        this.Score = Score;
     }
 
     

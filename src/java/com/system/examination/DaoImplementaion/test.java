@@ -11,6 +11,7 @@ import com.system.examination.model.Exam_list;
 import com.system.examination.model.Login;
 import com.system.examination.model.Question_Bank;
 import com.system.examination.model.Result;
+import com.system.examination.model.Submission;
 import com.system.examination.model.User_info;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -38,7 +39,7 @@ public class test {
         ui.setName("PMJ");
         ui.setProgram("Null");
         ui.setUser_id(123);
-        
+   /*     
          if (uid.insert(ui)) {
          System.out.println("inserted in user_info");
          }
@@ -190,7 +191,7 @@ public class test {
          if (eld.delete(45)) {
          System.out.println("deleted");
          }
-         */
+         /*
          Object x = eld.getAll();
          ArrayList<Exam_list> list = (ArrayList<Exam_list>) x;
 
@@ -232,31 +233,32 @@ public class test {
          }
         
         
-         /*****************************      Result TESTING  ***************************/
+         /*****************************      Result TESTING OK ***************************/
         ResultDaoImple rd = new ResultDaoImple();
         Result r = new Result();
 
         
+        r.setR_id(1);
         r.setR_exam_id(45);
         r.setR_user_id(123);
-        r.setR_ques_id("EC01");
-        r.setSubmission("A");
-        r.setEvaluation(1);
-/*
-        if (rd.insert(r)) {
+        r.setR_Date(dt);
+        r.setScore(81);
+
+/*        if (rd.insert(r)) {
             System.out.println("inserted");
         }
-     */   
-      
-      /*  Object x = rd.getAll();
+   
+     /* 
+       Object x = rd.getAll();
          ArrayList<Result> list = (ArrayList<Result>) x;
 
          for (Result res : list) {
          System.out.println(res.getR_exam_id()+ "," + 
-         res.getR_ques_id()+ "," + 
+         res.getR_id()+ "," + 
          res.getR_user_id()+ "," +
-         res.getSubmission()+ "," +
-         res.getEvaluation());
+         res.getR_exam_id()+ "," +
+         res.getScore()+ "," +
+         res.getR_Date());
          }
 
         /**
@@ -280,13 +282,13 @@ public class test {
          }
         
          
-         /*         
+         /*        
          if(cd.insert(c))
          {
          System.out.println("inserted");
          }
         
-        
+      /*  
          if(cd.update(c))
          {
          System.out.println("updated");
@@ -300,6 +302,35 @@ public class test {
          }
                
          */
+        
+        
+         /*****************************      Submission TESTING OK ***************************/
+        SubmissionDaoImple sd = new SubmissionDaoImple();
+        Submission su = new Submission();
+
+        
+        su.setR_id(1);
+        su.setS_ques_id(45);
+        su.setSubmission("B");
+        su.setEvaluation(1);
+       
+/*
+        if (sd.insert(su)) {
+            System.out.println("inserted");
+        }
+  */ 
+      
+       Object y = sd.getAll();
+         ArrayList<Submission> list1 = (ArrayList<Submission>) y;
+
+         for (Submission sub : list1) {
+         System.out.println(sub.getR_id()+ "," + 
+         sub.getS_ques_id()+ "," + 
+         sub.getSubmission()+ "," +
+         sub.getEvaluation());
+         }
+         
+         /*********************************/
 
     }
 }
