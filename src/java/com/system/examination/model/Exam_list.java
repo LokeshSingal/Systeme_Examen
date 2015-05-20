@@ -18,6 +18,7 @@ public class Exam_list {
     private int exam_id;
     private int instructor_id;
     private String exam_desc;
+    private String exam_title;
     private int no_of_ques;
     private Time duration;
     private int Show_instant_result;
@@ -26,7 +27,11 @@ public class Exam_list {
     private String exam_username;
     private String exam_password;
 
-    public int getExam_id() {
+    public String getExam_title() {
+        return exam_title;
+    }
+
+        public int getExam_id() {
         return exam_id;
     }
 
@@ -72,6 +77,10 @@ public class Exam_list {
 
     public void setInstructor_id(int instructor_id) {
         this.instructor_id = instructor_id;
+    }
+
+    public void setExam_title(String exam_title) {
+        this.exam_title = exam_title;
     }
 
     public void setExam_desc(String exam_desc) {

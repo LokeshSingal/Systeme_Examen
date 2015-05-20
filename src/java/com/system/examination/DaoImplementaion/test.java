@@ -38,7 +38,7 @@ public class test {
         ui.setName("PMJ");
         ui.setProgram("Null");
         ui.setUser_id(123);
-        /*
+        
          if (uid.insert(ui)) {
          System.out.println("inserted in user_info");
          }
@@ -76,11 +76,11 @@ public class test {
         l.setPri_Instructor(1);
         l.setPri_Student(0);
 
-        /*     
+        /*   
          if (ld.insert(l)) {
          System.out.println("inserted in login_credentials");
          }
-
+/*
          /*      
          if (ld.update(l)) {
          System.out.println("updated login_credentials");
@@ -165,6 +165,7 @@ public class test {
         Time t = new Time(2, 56, 52);
 
         el.setExam_id(45);
+        el.setExam_title("JAVA");
         el.setExam_desc("Exam updated Testing");
         el.setInstructor_id(123);
         el.setDeclare_date(dt);
@@ -174,11 +175,12 @@ public class test {
         el.setShow_instant_result(0);
         el.setExam_username("Test1");
         el.setExam_password("password");
+        
         /*
          if (eld.insert(el)) {
          System.out.println("inserted exam_list");
          }
-
+/*
          /*       
          if (eld.update(el)) {
          System.out.println("updated");
@@ -188,12 +190,12 @@ public class test {
          if (eld.delete(45)) {
          System.out.println("deleted");
          }
-         /*
+         */
          Object x = eld.getAll();
          ArrayList<Exam_list> list = (ArrayList<Exam_list>) x;
 
          for (Exam_list examlist : list) {
-         System.out.println(examlist.getExam_id() + "," + examlist.getExam_desc() + "," + examlist.getInstructor_id() + "," + examlist.getNo_of_ques());
+         System.out.println(examlist.getExam_id() + "," + examlist.getExam_title() + "," + examlist.getExam_desc() + "," + examlist.getInstructor_id() + "," + examlist.getNo_of_ques());
          }
         
         
@@ -246,7 +248,7 @@ public class test {
         }
      */   
       
-        Object x = rd.getAll();
+      /*  Object x = rd.getAll();
          ArrayList<Result> list = (ArrayList<Result>) x;
 
          for (Result res : list) {

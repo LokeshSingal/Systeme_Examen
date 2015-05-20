@@ -34,6 +34,7 @@ public class Exam_ListDaoImple implements Exam_ListDaoInterface{
       String query="INSERT INTO exam_list values('"+
               el.getExam_id()+"','"+
               el.getInstructor_id() +"','"+
+              el.getExam_title() +"','"+
               el.getExam_desc()+"','"+
               el.getNo_of_ques()+"','"+
               el.getDuration()+"','"+
@@ -66,6 +67,7 @@ public class Exam_ListDaoImple implements Exam_ListDaoInterface{
     public boolean update(Exam_list el) throws SQLException {
         Statement stmt = con.createStatement();
        String query=" UPDATE exam_list set instructor_id = '" + el.getInstructor_id()+ 
+                "','"+ "exam_title = '" + el.getExam_title()+
                 "'," + "exam_desc = '" + el.getExam_desc()+ 
                 "'," + "no_of_ques = '"+ el.getNo_of_ques()+
                 "'," + "duration = '" + el.getDuration()+
@@ -96,6 +98,7 @@ public class Exam_ListDaoImple implements Exam_ListDaoInterface{
             
             el.setExam_id(rs.getInt("exam_id"));
             el.setInstructor_id(rs.getInt("instructor_id"));
+            el.setExam_title("exam_title");
             el.setExam_desc(rs.getString("exam_desc"));
             el.setNo_of_ques(rs.getInt("no_of_ques"));
             el.setDuration(rs.getTime("duration"));
