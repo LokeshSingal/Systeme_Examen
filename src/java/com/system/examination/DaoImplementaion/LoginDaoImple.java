@@ -32,8 +32,7 @@ public class LoginDaoImple implements LoginDaoInterface  {
     @Override
     public boolean insert(Login l) throws SQLException {
       Statement stmt = con.createStatement();
-      String query="INSERT INTO login_credentials values('"+
-              l.getUser_id()+"','"+
+      String query="INSERT INTO login_credentials (username,password,email,instructor,student,admin) values('"+
               l.getUser_username() +"','"+
               l.getUser_password()+"','"+
               l.getUser_email()+"','"+

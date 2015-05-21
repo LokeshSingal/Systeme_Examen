@@ -7,7 +7,6 @@ package com.system.examination.DaoImplementaion;
 
 import com.system.examination.DBConnection.DatabaseConnection;
 import com.system.examination.DaoInterface.SubmissionDaoInterface;
-import com.system.examination.model.Result;
 import com.system.examination.model.Submission;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -33,7 +32,7 @@ public class SubmissionDaoImple implements SubmissionDaoInterface {
     @Override
     public boolean insert(Submission su) throws SQLException {
       Statement stmt = con.createStatement();
-      String query="INSERT INTO submission values('"+
+      String query="INSERT INTO submission (r_id,ques_id,submission,evaluation) values('"+
               su.getR_id()+"','"+
               su.getS_ques_id()+"','"+
               su.getSubmission()+"','"+

@@ -28,8 +28,7 @@ public class Question_BankDaoImple implements Question_BankDaoInterface{
     @Override
     public boolean insert(Question_Bank q_bank) throws SQLException {
     Statement stmt = con.createStatement();
-      String query="INSERT INTO question_bank values('"+
-              q_bank.getQues_id()+"','"+
+      String query="INSERT INTO question_bank (instructor_id,q_desc,question,optionA,optionB,optionC,optionD,solution,level,course_id) values('"+
               q_bank.getInstructor_id()+"','"+
               q_bank.getQ_desc()+"','"+
               q_bank.getQuestion()+"','"+
@@ -103,7 +102,7 @@ public class Question_BankDaoImple implements Question_BankDaoInterface{
             q_bank.setSolution(rs.getString("solution"));
             q_bank.setLevel(rs.getString("level"));
             q_bank.setCourse_id(rs.getString("course_id"));
-            q_bank.setQues_id(rs.getString("q_id"));
+            q_bank.setQues_id(rs.getInt("q_id"));
             
             quesbank.add( q_bank );
         }        

@@ -31,8 +31,7 @@ public class Exam_ListDaoImple implements Exam_ListDaoInterface{
     @Override
     public boolean insert(Exam_list el) throws SQLException {
         Statement stmt = con.createStatement();
-      String query="INSERT INTO exam_list values('"+
-              el.getExam_id()+"','"+
+      String query="INSERT INTO exam_list (instructor_id,exam_title,exam_desc,no_of_ques,duration,show_instant_result,declare_date,total_marks,username,password) values('"+
               el.getInstructor_id() +"','"+
               el.getExam_title() +"','"+
               el.getExam_desc()+"','"+

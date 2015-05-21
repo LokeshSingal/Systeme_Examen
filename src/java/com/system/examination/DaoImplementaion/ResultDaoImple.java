@@ -31,8 +31,7 @@ public class ResultDaoImple implements ResultDaoInterface {
     @Override
     public boolean insert(Result result) throws SQLException {
       Statement stmt = con.createStatement();
-      String query="INSERT INTO result values('"+
-              result.getR_id()+"','"+
+      String query="INSERT INTO result (user_id,exam_id,date,score) values('"+
               result.getR_user_id()+"','"+
               result.getR_exam_id()+"','"+
               result.getR_Date()+"','"+

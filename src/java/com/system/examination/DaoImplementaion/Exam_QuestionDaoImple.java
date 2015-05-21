@@ -29,7 +29,7 @@ public class Exam_QuestionDaoImple implements Exam_QuestionDaoInterface{
     @Override
     public boolean insert(Exam_Questions e_ques) throws SQLException {
           Statement stmt = con.createStatement();
-      String query="INSERT INTO exam_question values('"+
+      String query="INSERT INTO exam_question (exam_id,ques_id,q_marks) values('"+
               e_ques.getExam_id()+"','"+
               e_ques.getQues_id()+"','"+
               e_ques.getQ_marks()+"' )";
@@ -77,7 +77,7 @@ public class Exam_QuestionDaoImple implements Exam_QuestionDaoInterface{
         while ( rs.next() ) {
             e_ques = new Exam_Questions();
             e_ques.setExam_id(rs.getInt("exam_id") );
-            e_ques.setQues_id(rs.getString("ques_id"));
+            e_ques.setQues_id(rs.getInt("ques_id"));
             e_ques.setQ_marks(rs.getInt("q_marks"));
             
             

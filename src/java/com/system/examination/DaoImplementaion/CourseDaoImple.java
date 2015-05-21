@@ -33,7 +33,7 @@ public class CourseDaoImple implements CourseDaoInterface{
     public boolean insert(Course c) throws SQLException {
         
       Statement stmt = con.createStatement();
-      String query="INSERT INTO course values('"+c.getCourseID()+"','"+c.getCourseName()+"','"+c.getCourseDesc()+"')";
+      String query="INSERT INTO course (c_id,c_name,c_desc) values('"+c.getCourseID()+"','"+c.getCourseName()+"','"+c.getCourseDesc()+"')";
       int n =stmt.executeUpdate(query);
       if(n > 0 )
           return true;
