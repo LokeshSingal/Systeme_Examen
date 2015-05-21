@@ -10,7 +10,7 @@ package com.system.examination.model;
  * @author lokesh
  */
 public class Question_Bank {
-    private String Ques_id;
+    private int Ques_id;
     private int Instructor_id;
     private String Q_desc;
     private String Question;
@@ -22,7 +22,7 @@ public class Question_Bank {
     private String Level;
     private String Course_id;
 
-    public String getQues_id() {
+    public int getQues_id() {
         return Ques_id;
     }
 
@@ -66,7 +66,7 @@ public class Question_Bank {
         return Course_id;
     }
 
-    public void setQues_id(String Ques_id) {
+    public void setQues_id(int Ques_id) {
         this.Ques_id = Ques_id;
     }
 

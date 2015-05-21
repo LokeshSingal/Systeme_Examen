@@ -38,8 +38,8 @@ public class test {
         ui.setImage("v ipdatedjhsbvhb");
         ui.setName("PMJ");
         ui.setProgram("Null");
-        ui.setUser_id(123);
-   /*     
+       
+        /*
          if (uid.insert(ui)) {
          System.out.println("inserted in user_info");
          }
@@ -48,7 +48,7 @@ public class test {
          System.out.println("updated_user_info");
          }
 
-         if (uid.delete(123)) {
+         if (uid.delete(1)) {
          System.out.println("deleted_user_info");
          }
 
@@ -69,7 +69,6 @@ public class test {
         LoginDaoImple ld = new LoginDaoImple();
         Login l = new Login();
 
-        l.setUser_id(123);
         l.setUser_email("123@456.com updated");
         l.setUser_username("lokesh");
         l.setUser_password("lokesh");
@@ -77,7 +76,7 @@ public class test {
         l.setPri_Instructor(1);
         l.setPri_Student(0);
 
-        /*   
+         /*
          if (ld.insert(l)) {
          System.out.println("inserted in login_credentials");
          }
@@ -109,8 +108,7 @@ public class test {
         Question_BankDaoImple qbd = new Question_BankDaoImple();
         Question_Bank qb = new Question_Bank();
 
-        qb.setQues_id("EC01");
-        qb.setInstructor_id(123);
+        qb.setInstructor_id(1);
         qb.setQ_desc("Question_desc");
         qb.setQuestion("Qes.............?");
         qb.setOptionA("A");
@@ -131,7 +129,7 @@ public class test {
          }
 
 
-         if (qbd.delete("EC01")) {
+         if (qbd.delete(1)) {
          System.out.println("deleted");
          }
 
@@ -165,10 +163,9 @@ public class test {
 
         Time t = new Time(2, 56, 52);
 
-        el.setExam_id(45);
         el.setExam_title("JAVA");
         el.setExam_desc("Exam updated Testing");
-        el.setInstructor_id(123);
+        el.setInstructor_id(1);
         el.setDeclare_date(dt);
         el.setDuration(t);
         el.setNo_of_ques(50);
@@ -206,8 +203,8 @@ public class test {
         Exam_QuestionDaoImple ed = new Exam_QuestionDaoImple(null);
         Exam_Questions eq = new Exam_Questions();
 
-        eq.setExam_id(45);
-        eq.setQues_id("EC01");
+        eq.setExam_id(47);
+        eq.setQues_id(2);
         eq.setQ_marks(200);
 
         /*
@@ -238,13 +235,13 @@ public class test {
         Result r = new Result();
 
         
-        r.setR_id(1);
-        r.setR_exam_id(45);
-        r.setR_user_id(123);
+       
+        r.setR_exam_id(47);
+        r.setR_user_id(1);
         r.setR_Date(dt);
         r.setScore(81);
-
-/*        if (rd.insert(r)) {
+/*
+       if (rd.insert(r)) {
             System.out.println("inserted");
         }
    
@@ -282,7 +279,7 @@ public class test {
          }
         
          
-         /*        
+         /*      
          if(cd.insert(c))
          {
          System.out.println("inserted");
@@ -309,17 +306,17 @@ public class test {
         Submission su = new Submission();
 
         
-        su.setR_id(1);
-        su.setS_ques_id(45);
+        su.setR_id(3);
+        su.setS_ques_id(2);
         su.setSubmission("B");
         su.setEvaluation(1);
        
-/*
+
         if (sd.insert(su)) {
             System.out.println("inserted");
         }
-  */ 
-      
+   
+    /*  
        Object y = sd.getAll();
          ArrayList<Submission> list1 = (ArrayList<Submission>) y;
 

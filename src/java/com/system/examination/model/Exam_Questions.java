@@ -13,14 +13,14 @@ package com.system.examination.model;
 public class Exam_Questions {
 
     private int exam_id;
-    private String ques_id;
+    private int ques_id;
     private int q_marks;
 
     public int getExam_id() {
         return exam_id;
     }
 
-    public String getQues_id() {
+    public int getQues_id() {
         return ques_id;
     }
 
@@ -32,7 +32,7 @@ public class Exam_Questions {
         this.exam_id = exam_id;
     }
 
-    public void setQues_id(String ques_id) {
+    public void setQues_id(int ques_id) {
         this.ques_id = ques_id;
     }
 
