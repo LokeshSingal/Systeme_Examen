@@ -21,10 +21,12 @@ public abstract class ActionUser implements Action {
      protected User_info getUser_infoObjectRequest(HttpServletRequest req, HttpServletResponse resp){
         
          
-        int user_id = Integer.parseInt(req.getParameter(""));
+        String email = req.getParameter("email");
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
         String name = req.getParameter("name");
-        String image = req.getParameter("");
-        String institute = req.getParameter("");
+       // String image = req.getParameter("image");
+        String institute = req.getParameter("institute");
         String program = req.getParameter("program");
         String gender = req.getParameter("sex");
         
@@ -33,10 +35,10 @@ public abstract class ActionUser implements Action {
         
        
         user.setName(name);
-        user.setImage(image);
+       // user.setImage(image);
         user.setInstitute_name(institute);
         user.setProgram(program);
-        user.setGender(image);
+        user.setGender(gender);
         
         
         return user;
