@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 public abstract class ActionEamQuestion implements Action {
 
     protected Exam_Questions getExamQuestionObjectRequest(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        Exam_Question exam_ques = Exam_Questions();
+        Exam_Questions exam_ques = Exam_Questions();
 
         //int exam_id = Integer.parseInt(req.getParameter(null));
         //int ques_id = Integer.parseInt
