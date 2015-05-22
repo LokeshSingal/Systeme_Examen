@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 
-package com.system.examination.Controller.action;
+package com.system.examination.Controller.Delegate;
 
+import com.system.examination.Controller.action.*;
 import com.system.examination.Controller.Action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,14 +15,11 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Kishan
  */
-public class ShowLoginForm implements Action{
+public class LoginValidate implements Action{
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse res) {
-        String view = "Logindemo.jsp";
-
-        return view;
-        
+        return "LoginFail.jsp";
     }
     
 }

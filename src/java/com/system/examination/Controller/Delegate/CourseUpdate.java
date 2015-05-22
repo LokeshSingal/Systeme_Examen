@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.system.examination.Controller.action;
+package com.system.examination.Controller.Delegate;
 
+import com.system.examination.Controller.action.*;
 import com.system.examination.Controller.Action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,13 +14,11 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author lokesh
  */
-public class ExamAdd implements Action {
+public class CourseUpdate implements Action {
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse res) {
-        String create = "CreateExam.jsp";
-                
-                return create;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
