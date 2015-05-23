@@ -32,18 +32,27 @@ public class LoginDaoImple implements LoginDaoInterface  {
     @Override
     public boolean insert(Login l) throws SQLException {
       Statement stmt = con.createStatement();
-      String query="INSERT INTO login_credentials (user_id,username,password,email,instructor,student,admin) values('"+
-              l.getUser_id()+"','"+
+      String query="INSERT INTO login_credentials (username,password,email,instructor,student,admin) values('"+
               l.getUser_username() +"','"+
               l.getUser_password()+"','"+
-              l.getUser_email()+"','"+
-              l.getPri_Instructor()+"','"+
-              l.getPri_Student()+"','"+
-              l.getPri_Admin()+"' )";
+              l.getUser_email()+"',"+
+              l.getPri_Instructor()+","+
+              l.getPri_Student()+","+
       
-      int n =stmt.executeUpdate(query);
-      if(n > 0 )
+              l.getPri_Admin()+" )";
+      int n=0;
+      try
+      {
+       n =stmt.executeUpdate(query);
+      }catch(Exception e)
+      {
+          System.out.println(e.getMessage());
+      }
+      if(n > 0 ){
+          System.out.println(n);
+         
           return true;
+      }
       else
           return false;
     }
@@ -110,7 +119,7 @@ public class LoginDaoImple implements LoginDaoInterface  {
         Statement stmt;
         stmt = con.createStatement();        
         ResultSet rs = stmt.executeQuery("SELECT * FROM login_credentials Where email='"+email+"'");
-        if(rs.getRow()>0)
+        if(rs.next())
         {
             l = new Login();
             l.setUser_id(rs.getInt("user_id"));

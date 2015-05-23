@@ -31,15 +31,15 @@ public class test {
          */
         User_InfoDaoImple uid = new User_InfoDaoImple();
         User_info ui = new User_info();
-
+        ui.setUser_id(4);
         ui.setGender("M");
         ui.setInstitute_name("DAIICT");
         ui.setImage("v ipdatedjhsbvhb");
         ui.setName("PMJ");
         ui.setProgram("Null");
        
-        /*
-         if (uid.insert(ui)) {
+        
+        /* if (uid.insert(ui)) {
          System.out.println("inserted in user_info");
          }
          /*
@@ -74,8 +74,21 @@ public class test {
         l.setPri_Admin(1);
         l.setPri_Instructor(1);
         l.setPri_Student(0);
-
-         /*
+        uid = new User_InfoDaoImple();
+        ui = new User_info();
+        ui.setUser_id(ld.getUserByEmail("ajudiya.kishan007@gamil.com").getUser_id());
+        //ui.setGender("M");
+       // ui.setInstitute_name("DAIICT");
+       // ui.setImage("v ipdatedjhsbvhb");
+        //ui.setName("PMJ");
+        //ui.setProgram("Null");
+       
+        
+         //if (uid.insert(ui)) {
+         System.out.println(ui.getUser_id());
+         //}
+        
+/*         
          if (ld.insert(l)) {
          System.out.println("inserted in login_credentials");
          }
@@ -310,7 +323,7 @@ public class test {
         su.setSubmission("B");
         su.setEvaluation(1);
        
-
+/*
         if (sd.insert(su)) {
             System.out.println("inserted");
         }
