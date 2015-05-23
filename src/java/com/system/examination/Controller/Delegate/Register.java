@@ -23,7 +23,11 @@ public class Register implements Action{
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse res) {
         try {
+<<<<<<< HEAD
             System.out.println(req.getParameter("email"));
+=======
+            /*
+>>>>>>> b0cea4d08b4d0f21a8bfde09ae1657982b8bd66c
             String f_name,email,pwd,edu,ins,gen;
             f_name=req.getParameter("full_name");
             email=req.getParameter("email");
@@ -33,6 +37,10 @@ public class Register implements Action{
             gen=req.getParameter("gender");
             
              Login l=new Login();
+<<<<<<< HEAD
+=======
+           
+>>>>>>> b0cea4d08b4d0f21a8bfde09ae1657982b8bd66c
             l.setUser_username(f_name);
             l.setUser_email(email);
             l.setUser_password(pwd);
@@ -57,6 +65,20 @@ public class Register implements Action{
             }
            
             
+            
+            
+            User_info u=new User_info();
+            u.setUser_id(ld.getUserByEmail(email).getUser_id());
+            u.setGender(gen);
+            u.setInstitute_name(ins);
+            u.setProgram(edu);
+            u.setName(f_name);
+            User_InfoDaoImple ud=new User_InfoDaoImple();
+            ud.insert(u);
+            
+           */
+              System.out.print("123456");
+            System.out.print(req.getParameterNames());
             
             
         } catch (Exception e) {
