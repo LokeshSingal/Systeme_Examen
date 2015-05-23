@@ -9,8 +9,8 @@
               <img src="user_photo.jpeg" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-              <p>Kishan Ajudiya</p>
-              <p>ajudiya.kishan007@gmail.com</p>
+                <p><%=l.getUser_username()%></p>
+              <p><%=l.getUser_email()%></p>
                </div>
           </div>
           <!-- search form -->

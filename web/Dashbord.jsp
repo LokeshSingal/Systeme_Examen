@@ -1,8 +1,14 @@
+<%@page import="com.system.examination.model.Login"%>
+<% 
+    Login l=new Login();
+    l=(Login)request.getSession().getAttribute("User");
+    
+%>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Kishan Ajudiya | Home</title>
+    <title><%=l.getUser_username()%> | Home</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
    
     <%@include file="Head_css.jsp" %>

@@ -32,7 +32,7 @@ public class LoginValidate implements Action{
             System.out.println("in");
             if(l.getUser_password().equals(req.getParameter("password")))
                     {
-                        req.
+                        req.getSession().setAttribute("User", l);
                         return "Dashbord.jsp";
                     }
         }
