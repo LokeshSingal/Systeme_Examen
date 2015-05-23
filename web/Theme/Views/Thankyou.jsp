@@ -26,7 +26,7 @@
             <!-- Left side column. contains the logo and sidebar -->
 
             <!-- Code of left side user panel -->
-
+            <%@include file="Left-side_User_Menu.jsp" %>
             <!-- /Code of left side user panel -->
 
 
