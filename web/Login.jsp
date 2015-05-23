@@ -12,13 +12,13 @@
     <title>Systme Examen | Log in</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="Theme/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
-    <link href="../dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+    <link href="Theme/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
     <!-- iCheck -->
-    <link href="../plugins/iCheck/square/blue.css" rel="stylesheet" type="text/css" />
+    <link href="Theme/lugins/iCheck/square/blue.css" rel="stylesheet" type="text/css" />
 
   </head>
   <body class="login-page">
@@ -28,7 +28,7 @@
       </div><!-- /.login-logo -->
       <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
-        <form action="/Systeme_Examen/Controller" method="post">
+        <form action="Controller" method="post">
             <input type="hidden" name="action" value="login">
           <div class="form-group has-feedback">
               <input type="email" class="form-control" placeholder="Email" required/>
@@ -61,11 +61,11 @@
     </div><!-- /.login-box -->
 
     <!-- jQuery 2.1.4 -->
-    <script src="../plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="Theme/plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.2 JS -->
-    <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="Theme/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <!-- iCheck -->
-    <script src="../plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+    <script src="Theme/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
     <script>
       $(function () {
         $('input').iCheck({

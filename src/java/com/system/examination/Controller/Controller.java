@@ -7,7 +7,6 @@ package com.system.examination.Controller;
 
 import com.system.examination.util.ObjectCreator;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Properties;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author lokesh
  */
-public class GeneralController extends HttpServlet {
+public class Controller extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

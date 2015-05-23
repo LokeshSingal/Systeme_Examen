@@ -20,6 +20,7 @@ public interface LoginDaoInterface {
     public boolean delete(int u_id) throws SQLException;
     public boolean update(Login l) throws SQLException;
     public ArrayList<Login> getAll() throws SQLException;
+    public Login getUserByEmail(String email) throws SQLException;
     
     
 }
