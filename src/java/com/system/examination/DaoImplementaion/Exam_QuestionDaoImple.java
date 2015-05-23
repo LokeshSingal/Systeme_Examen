@@ -22,7 +22,7 @@ public class Exam_QuestionDaoImple implements Exam_QuestionDaoInterface{
     
     private final Connection con;
 
-    public Exam_QuestionDaoImple(Connection con) throws ClassNotFoundException, SQLException {
+    public Exam_QuestionDaoImple() throws ClassNotFoundException, SQLException {
         this.con=DatabaseConnection.getInstance().getConnection();
     }
     

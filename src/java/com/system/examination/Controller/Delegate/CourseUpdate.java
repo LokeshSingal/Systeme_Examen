@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package com.system.examination.Controller.Delegate;
-
-import com.system.examination.Controller.action.*;
 import com.system.examination.Controller.Action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

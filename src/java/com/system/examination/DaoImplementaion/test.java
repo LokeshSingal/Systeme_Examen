@@ -17,7 +17,6 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Time;
 import java.text.ParseException;
-import java.util.ArrayList;
 
 /**
  *
@@ -200,7 +199,7 @@ public class test {
         
          /*****************************      Exam_Question TESTING OK  ***************************/
 
-        Exam_QuestionDaoImple ed = new Exam_QuestionDaoImple(null);
+        Exam_QuestionDaoImple ed = new Exam_QuestionDaoImple();
         Exam_Questions eq = new Exam_Questions();
 
         eq.setExam_id(47);
