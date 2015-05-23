@@ -81,7 +81,7 @@
 
        
 
-         <a href="Controllor?action=login" class="text-center">I already have a membership</a>
+         <a href="Controller?action=login" class="text-center">I already have a membership</a>
 
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
