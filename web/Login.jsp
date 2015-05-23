@@ -55,7 +55,7 @@
        
 
         <a href="#">I forgot my password</a><br>
-        <a href="Controllor?action=register" class="text-center">Register a new membership</a>
+        <a href="Controller?action=register" class="text-center">Register a new membership</a>
 
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->

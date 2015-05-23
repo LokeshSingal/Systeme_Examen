@@ -30,10 +30,10 @@ public class User_InfoDaoImple implements User_InfoDaoInterface{
     @Override
     public boolean insert(User_info ui) throws SQLException {
       Statement stmt = con.createStatement();
-      String query="INSERT INTO user_info (name,image,Institute_name,Program,Gender) VALUES "
+      String query="INSERT INTO user_info (name,Institute_name,Program,Gender) VALUES "
               + "('"+
               ui.getName()+"','"+
-              ui.getImage()+"','"+
+              //ui.getImage()+"','"+
               ui.getInstitute_name()+"','"+
               ui.getProgram()+"','"+
               ui.getGender()+"' )";

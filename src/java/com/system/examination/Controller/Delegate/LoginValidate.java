@@ -21,19 +21,28 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginValidate implements Action{
 
     @Override
-    public String execute(HttpServletRequest req, HttpServletResponse res) throws SQLException,ClassNotFoundException{
+    public String execute(HttpServletRequest req, HttpServletResponse res){
+       //System.out.println("sdas");
+        try
+        {
         LoginDaoImple ld=new LoginDaoImple();
         Login l=ld.getUserByEmail(req.getParameter("email"));
         if(l!=null)
         {
+            System.out.println("in");
             if(l.getUser_password().equals(req.getParameter("password")))
                     {
                         return "Dashbord.jsp";
                     }
         }
+        }
+        catch(Exception e)
+        {
+            req.setAttribute("error", e.toString()+"LoginValidate");
+            
+        }
         
         return "LoginFail.jsp";
-        
     }
     
 }

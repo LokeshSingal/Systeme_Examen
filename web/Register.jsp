@@ -28,7 +28,7 @@
       </div><!-- /.login-logo -->
       <div class="register-box-body">
         <p class="login-box-msg">Register a new membership</p>
-        <form action="GeneralController" method="post" data-toggle="validator">
+        <form action="Controller" method="post" data-toggle="validator">
             <input type="hidden" name="action" value="register">
                     <div class="form-group has-feedback">
                         <input type="text" class="form-control" id="name" name="full_name" placeholder="Full name" required/>
@@ -46,6 +46,16 @@
               <input type="password" class="form-control" data-match="#password" placeholder="Retype password" required />
             <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
           </div>
+           <div class="row">
+            <div class="col-xs-8">    
+              <div class="radin icheck">
+                <label>
+                    <input type="radio" id="m_g" name="gender" value="M"> &nbsp;&nbsp;&nbsp;Male&nbsp;&nbsp;&nbsp;
+                    <input type="radio" id="f_g" name="gender" value="F"> &nbsp;&nbsp;&nbsp;Female
+                </label>
+              </div>                        
+            </div><!-- /.col -->
+            </div>
             <div class="help-block with-errors"></div>
           <div class="form-group has-feedback">
               <input type="text" class="form-control" id="education" name="education" placeholder="Education" required/>
