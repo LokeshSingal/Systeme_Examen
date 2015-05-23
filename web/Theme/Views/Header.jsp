@@ -16,13 +16,13 @@
             <ul class="nav navbar-nav">
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="../user_photo.jpeg" class="user-image" alt="User Image"/>
+                  <img src="user_photo.jpeg" class="user-image" alt="User Image"/>
                   <span class="hidden-xs">Kishan Ajudiya</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    <img src="../user_photo.jpeg" class="img-circle" alt="User Image" />
+                    <img src="user_photo.jpeg" class="img-circle" alt="User Image" />
                     <p>
                       Kishan Ajudiya - Web Developer
                       <small>Member since Nov. 2012</small>

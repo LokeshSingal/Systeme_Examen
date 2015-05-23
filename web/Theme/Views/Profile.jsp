@@ -64,7 +64,7 @@
             <div class="box-body">
                
           <div class="row" style="margin-bottom: 30px">
-              <img src="../user_photo.jpeg" class="img-circle" style="margin-left: 120px; height: 200px;width: 200px;"  alt="User Image" />
+              <img src="user_photo.jpeg" class="img-circle" style="margin-left: 120px; height: 200px;width: 200px;"  alt="User Image" />
             </div>
           
             <div class="row" style="margin-left: 10px;width: 90%">
