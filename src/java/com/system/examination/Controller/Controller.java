@@ -7,7 +7,6 @@ package com.system.examination.Controller;
 
 import com.system.examination.util.ObjectCreator;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Properties;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

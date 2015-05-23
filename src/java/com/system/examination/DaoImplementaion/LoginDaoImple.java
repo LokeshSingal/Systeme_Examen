@@ -99,11 +99,40 @@ public class LoginDaoImple implements LoginDaoInterface  {
             
             User_list.add( l );
         }        
-        
         return User_list;
     }
 
+    @Override
+    public Login getUserByEmail(String email) throws SQLException {
+        
+        Login l;
+        Statement stmt;
+        stmt = con.createStatement();        
+        ResultSet rs = stmt.executeQuery("SELECT * FROM login_credentials Where email='"+email+"'");
+        if(rs.getRow()>0)
+        {
+            l = new Login();
+            l.setUser_id(rs.getInt("user_id"));
+            l.setUser_username(rs.getString("username"));
+            l.setUser_password(rs.getString("password"));
+            l.setUser_email(rs.getString("email"));
+            l.setPri_Instructor(rs.getInt("instructor"));
+            l.setPri_Student(rs.getInt("student"));
+            l.setPri_Admin(rs.getInt("admin"));
+        }
+        else
+        {
+            l=null;
+        }
+            
+                
+        
+        return l;
+    }
+        
+        
+
     
-   
+    }
     
-}
+    

@@ -19,8 +19,8 @@ public class ShowLoginForm implements Action{
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse res) {
-        String view = "Logindemo.jsp";
-
+        
+        String view = "Dashbord.jsp";
         return view;
         
     }
