@@ -1,9 +1,5 @@
 <%@page import="com.system.examination.model.Login"%>
-<% 
-    Login l=new Login();
-    l=(Login)request.getSession().getAttribute("User");
-    
-%>
+<%@include file="User_Req_details.jsp" %>
 
 
 <!DOCTYPE html>
