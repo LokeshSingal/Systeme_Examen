@@ -7,6 +7,7 @@ package com.system.examination.Controller.action;
 
 import com.system.examination.Controller.Action;
 import com.system.examination.DaoImplementaion.Question_BankDaoImple;
+import com.system.examination.model.Login;
 import com.system.examination.model.Question_Bank;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
@@ -45,6 +46,8 @@ public abstract class ActionQuestionBank implements Action {
         question.setOptionD(OptionD);
         question.setSolution(Solution);
         
+        Login l=(Login)req.getSession().getAttribute("User");
+        question.setInstructor_id(l.getUser_id());
   //      System.out.println(question.getCourse_id()+question.getLevel()+question.getOptionA()+question.getOptionB()+question.getOptionC()+question.getOptionD()+question.getQ_desc()+question.getSolution()+question.getInstructor_id());
         
         return question;
