@@ -31,7 +31,8 @@ public class SubmissionDaoImple implements SubmissionDaoInterface {
 
     @Override
     public boolean insert(Submission su) throws SQLException {
-      Statement stmt = con.createStatement();
+        try {
+               Statement stmt = con.createStatement();
       String query="INSERT INTO submission (r_id,ques_id,submission,evaluation) values('"+
               su.getR_id()+"','"+
               su.getS_ques_id()+"','"+
@@ -43,11 +44,17 @@ public class SubmissionDaoImple implements SubmissionDaoInterface {
           return true;
       else
           return false;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+        }
+     
     }
 
     @Override
     public ArrayList<Submission> getAll() throws SQLException {
-        ArrayList<Submission> usersub = new ArrayList<Submission>();
+        try {
+            ArrayList<Submission> usersub = new ArrayList<Submission>();
         Submission su;
         Statement stmt;
         stmt = con.createStatement();        
@@ -64,6 +71,10 @@ public class SubmissionDaoImple implements SubmissionDaoInterface {
         }        
         
         return usersub;
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+     return null;
     }
     
 }

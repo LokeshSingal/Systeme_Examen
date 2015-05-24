@@ -45,7 +45,7 @@ public abstract class ActionUser implements Action {
 
     }
 
-    protected void putStockRequest(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+    protected void putUserRequest(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         User_InfoDaoImple user_db = new User_InfoDaoImple();
         ArrayList<User_info> userinfo = user_db.getAll();
         req.setAttribute("userinfo", userinfo);

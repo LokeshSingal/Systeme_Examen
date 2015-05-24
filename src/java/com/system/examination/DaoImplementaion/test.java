@@ -282,7 +282,7 @@ public class test {
 
         c.setCourseID("IT615");
         c.setCourseName("Enterprise Computing");
-        c.setCourseDesc("Insert Update Demo");
+        c.setCourseDesc("Insert Update ");
         /*       
          //Testing To get All the list of courses
          Object x = cd.getAll();
@@ -294,20 +294,20 @@ public class test {
          }
         
          
-         /*      
+        *//*    
          if(cd.insert(c))
          {
          System.out.println("inserted");
          }
         
-         /*  
-         if(cd.update(c))
+/*
+        if(cd.update(c))
          {
          System.out.println("updated");
          }
         
         
-         
+         /*
          if(cd.delete(c.getCourseID()))
          {
          System.out.println("Deleted");

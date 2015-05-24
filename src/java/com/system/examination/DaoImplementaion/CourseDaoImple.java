@@ -32,19 +32,32 @@ public class CourseDaoImple implements CourseDaoInterface{
     @Override
     public boolean insert(Course c) throws SQLException {
         
-      Statement stmt = con.createStatement();
+        
+        try
+        {
+            Statement stmt = con.createStatement();
       String query="INSERT INTO course (c_id,c_name,c_desc) values('"+c.getCourseID()+"','"+c.getCourseName()+"','"+c.getCourseDesc()+"')";
       int n =stmt.executeUpdate(query);
       if(n > 0 )
           return true;
       else
           return false;
+        }
+        catch(Exception e)
+        {
+            System.err.println(e);
+            return false;
+        }
+                
+      
     }
 
     @Override
     public boolean delete(String c_id) throws SQLException {
         
-        Statement stmt = con.createStatement();
+        try
+        {
+            Statement stmt = con.createStatement();
         String query="DELETE FROM course WHERE c_id='"+ c_id +"' ";
         
         int n =stmt.executeUpdate(query);
@@ -52,12 +65,21 @@ public class CourseDaoImple implements CourseDaoInterface{
           return true;
       else
           return false;
+        }
+        catch(Exception e)
+        {
+            System.err.println(e);
+            return false;
+        }
+        
     }
 
     @Override
     public boolean update(Course c) throws SQLException {
         
-        Statement stmt = con.createStatement();
+        try
+        {
+             Statement stmt = con.createStatement();
         String query=" UPDATE course set c_name = '" + c.getCourseName() + 
                 "'," + "c_desc = '" + c.getCourseDesc() + 
                 "' " +"WHERE c_id = '" + c.getCourseID() + "' ";
@@ -67,6 +89,13 @@ public class CourseDaoImple implements CourseDaoInterface{
           return true;
       else
           return false;
+        }
+        catch(Exception e)
+        {
+            System.err.println(e);
+            return  false;
+       }
+       
         
         
     }
@@ -74,11 +103,15 @@ public class CourseDaoImple implements CourseDaoInterface{
     @Override
     public ArrayList<Course> getAll() throws SQLException {
         
+        
         ArrayList<Course> course_list = new ArrayList<Course>();
         Course c;
         Statement stmt;
-        stmt = con.createStatement();        
-        ResultSet rs = stmt.executeQuery("SELECT * FROM course");
+        stmt = con.createStatement();      
+        try
+        {
+            ResultSet rs = stmt.executeQuery("SELECT * FROM course");
+            
         while ( rs.next() ) {
             c = new Course();
             c.setCourseID(rs.getString("c_id") );
@@ -87,6 +120,13 @@ public class CourseDaoImple implements CourseDaoInterface{
             
             course_list.add( c );
         }        
+        
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        
         
         return course_list;
         

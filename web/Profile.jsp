@@ -8,7 +8,7 @@
 <% 
     Login l=new Login();
     l=(Login)request.getSession().getAttribute("User");
-      User_info user = (User_info) request.getAttribute("userP");
+    User_info user = (User_info) request.getAttribute("userP");
 %>
 <!DOCTYPE html>
 <html>
@@ -167,7 +167,7 @@
                     <div class="box box-primary" style="width:100%;margin-left: 7px">
                 
                   <div class="box-body">
-                      <form role="form" data-toggle="validator" action="Controllor?action=update_Profile" method="post">
+                      <form role="form" data-toggle="validator" action="Controllor?action=updateprofile" method="post">
                    
                           <% 
                           
@@ -226,7 +226,7 @@
                   <div class="tab-pane" id="tab_2">
                    <div class="box box-primary" style="width:100%;margin-left: 7px">
                 <div class="box-body">
-                      <form role="form" data-toggle="validator" action="Controllor?action=update_Profile" method="post">
+                      <form role="form" data-toggle="validator" action="Controller?action=updateprofile" method="post">
                       <div class="form-group">
                           
                       <label>Username</label>

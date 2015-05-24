@@ -30,7 +30,8 @@ public class ResultDaoImple implements ResultDaoInterface {
 
     @Override
     public boolean insert(Result result) throws SQLException {
-      Statement stmt = con.createStatement();
+        try {
+            Statement stmt = con.createStatement();
       String query="INSERT INTO result (user_id,exam_id,date,score) values('"+
               result.getR_user_id()+"','"+
               result.getR_exam_id()+"','"+
@@ -42,11 +43,17 @@ public class ResultDaoImple implements ResultDaoInterface {
           return true;
       else
           return false;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+        }
+        
     }
 
     @Override
     public ArrayList<Result> getAll() throws SQLException {
-       ArrayList<Result> userresult = new ArrayList<Result>();
+        try {
+            ArrayList<Result> userresult = new ArrayList<Result>();
         Result result;
         Statement stmt;
         stmt = con.createStatement();        
@@ -63,6 +70,12 @@ public class ResultDaoImple implements ResultDaoInterface {
         }        
         
         return userresult;
+        } catch (Exception e) {
+            System.err.println(e);
+            
+        }
+        
+        return null;
     }
     
     

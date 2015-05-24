@@ -28,7 +28,10 @@ public class Exam_QuestionDaoImple implements Exam_QuestionDaoInterface{
     
     @Override
     public boolean insert(Exam_Questions e_ques) throws SQLException {
-          Statement stmt = con.createStatement();
+      
+        try
+        {
+      Statement stmt = con.createStatement();
       String query="INSERT INTO exam_question (exam_id,ques_id,q_marks) values('"+
               e_ques.getExam_id()+"','"+
               e_ques.getQues_id()+"','"+
@@ -39,11 +42,18 @@ public class Exam_QuestionDaoImple implements Exam_QuestionDaoInterface{
           return true;
       else
           return false;
+        }
+        catch(Exception e)
+        {
+            System.err.println(e);
+            return false;
+        }
     }
 
     @Override
     public boolean delete(int exam_id) throws SQLException {
-        Statement stmt = con.createStatement();
+        try {
+            Statement stmt = con.createStatement();
         String query="DELETE FROM exam_question WHERE exam_id='"+ exam_id +"' ";
         
         int n =stmt.executeUpdate(query);
@@ -51,11 +61,17 @@ public class Exam_QuestionDaoImple implements Exam_QuestionDaoInterface{
           return true;
       else
           return false;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+        }
+        
     }
 
     @Override
     public boolean update(Exam_Questions e_ques) throws SQLException {
-        Statement stmt = con.createStatement();
+        try {
+             Statement stmt = con.createStatement();
         String query=" UPDATE exam_question set ques_id = '" + e_ques.getQues_id()+ 
                 "'," + "q_marks = '" + e_ques.getQ_marks()+ 
                 "' " +"WHERE exam_id = '" + e_ques.getExam_id()+ "' ";
@@ -65,11 +81,18 @@ public class Exam_QuestionDaoImple implements Exam_QuestionDaoInterface{
           return true;
         else
           return false;
+        } catch (Exception e) {
+            System.err.println(e);
+            return false;
+        }
+       
     }
 
     @Override
     public ArrayList<Exam_Questions> getAll() throws SQLException {
-        ArrayList<Exam_Questions> examques = new ArrayList<Exam_Questions>();
+        
+        try {
+             ArrayList<Exam_Questions> examques = new ArrayList<Exam_Questions>();
         Exam_Questions e_ques;
         Statement stmt;
         stmt = con.createStatement();        
@@ -82,9 +105,18 @@ public class Exam_QuestionDaoImple implements Exam_QuestionDaoInterface{
             
             
             examques.add( e_ques );
-        }        
+            return examques;
+          
+        } 
         
-        return examques;
+        }catch (Exception e) {
+            System.err.println(e);
+            
+        }
+        
+             return null;
+        
+        
     }
     
 }

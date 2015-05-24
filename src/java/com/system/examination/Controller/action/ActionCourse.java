@@ -38,8 +38,8 @@ public abstract class ActionCourse implements Action {
     protected void putCourseRequest(HttpServletRequest req,HttpServletResponse resp) throws SQLException, ClassNotFoundException
     {
         CourseDaoImple cd = new CourseDaoImple();
-        ArrayList<Course> course = cd.getAll();
-        req.setAttribute("course", course);
+        ArrayList<Course> courselist = cd.getAll();
+        req.setAttribute("courselist", courselist);
     }
 
 }

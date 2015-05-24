@@ -3,12 +3,19 @@
     Created on : 22 May, 2015, 4:44:03 PM
     Author     : lokesh
 --%>
-
+<%@page import="com.system.examination.model.Course"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.system.examination.model.Login"%>
+<% 
+    Login l=new Login();
+    l=(Login)request.getSession().getAttribute("User");
+    
+%>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Kishan Ajudiya | Home</title>
+    <title><%=l.getUser_username()%> | Home</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <%@include file="Head_css.jsp" %>
@@ -47,11 +54,15 @@
 
 
         <!-- Code of middel part -->
-      
+        <%
+        ArrayList<Course> list = (ArrayList<Course>)request.getAttribute("courselist");
+        
+        
+        %>
             
          
             <div class="row" style="margin-left: 170px;margin-top: 20px">
-              <div class="box box-primary" style="width: 70%">
+              <div class="box box-primary" style="width:70%">
                  <div class="box-header">
                      <h4>Course List</h4>
                     </div>
@@ -59,31 +70,38 @@
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                       <th>Sr. No.</th>
-                      <th>Course ID</th>
+                       <th>Course ID</th>
+                      <th>Course Name</th>
                       <th>Description</th>
-                      <th>Utility</th>
+                      <th style="width: 210px">Utility</th>
                         </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>n</td>
-                      <td>JAVA</td>
-                      <td>70</td>
-                      <td><div class="box-body">
-                  <a class="btn btn-app" data-toggle="modal" href="#myModal">
+                      
+                          <% for(Course crs : list )
+                          {%>
+                          <tr>
+                            <td><%=crs.getCourseID()%></td>
+                            <td><%=crs.getCourseName()%></td>
+                            <td><%=crs.getCourseDesc()%></td>
+                              <td><div class="box-body">
+                  <a class="btn btn-app" data-toggle="modal" href="#myModal<%=crs.getCourseID()%>">
                     <i class="fa fa-eye" style="transform:translate(0px, -10px)"></i> View
                   </a>
-                  <a class="btn btn-app" data-toggle="modal" href="#myModal12">
+                  <a class="btn btn-app" data-toggle="modal" href="#myModal12<%=crs.getCourseID()%>">
                     <i class="fa fa-edit" style="transform:translate(0px, -10px)" ></i> Edit
                   </a>
-                  <a class="btn btn-app" data-toggle="modal" href="#myModal1">
+                  <a class="btn btn-app" data-toggle="modal" href="#myModal1<%=crs.getCourseID()%>">
                     <i class="fa fa-trash" style="transform:translate(0px, -10px)" ></i> Delete
                   </a>
-                </div><!-- /.box-body --></td></td>                    
-                      </tr>
+                </div><!-- /.box-body --></td>   
+                                </tr>
+                         
+                       
+                                     
+                    
                       
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="myModal<%=crs.getCourseID()%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -92,25 +110,18 @@
       </div>
       <div class="modal-body">
           <div class="row" style="padding-left: 40px;padding-top: 10px;padding-right: 10px">
-          <label style="color:#fff; font-size:large;  width: 30%; background-color: rgb(108, 171, 227); height: 30px; text-align: right;" class="skin-blue"><b>Decs :</b> </label>
-          dfsadfasfd
+          <label style="color:#fff; font-size:large;  width: 30%; background-color: rgb(108, 171, 227); height: 30px; text-align: right;" class="skin-blue"><b> Course ID ~ </b> </label>
+          <%=crs.getCourseID()%>
           </div>
           <div class="row" style="padding-left: 40px;padding-top: 10px;padding-right: 10px">
-          <label style="color:#fff; font-size:large;  width: 30%; background-color: rgb(108, 171, 227); height: 30px; text-align: right;" class="skin-blue"><b>Decs :</b> </label>
-          dfsadfasfd
+          <label style="color:#fff; font-size:large;  width: 30%; background-color: rgb(108, 171, 227); height: 30px; text-align: right;" class="skin-blue"><b> Course Name ~  </b> </label>
+          <%=crs.getCourseName()%>
           </div>
           <div class="row" style="padding-left: 40px;padding-top: 10px;padding-right: 10px">
-          <label style="color:#fff; font-size:large;  width: 30%; background-color: rgb(108, 171, 227); height: 30px; text-align: right;" class="skin-blue"><b>Decs :</b> </label>
-          dfsadfasfd
+          <label style="color:#fff; font-size:large;  width: 30%; background-color: rgb(108, 171, 227); height: 30px; text-align: right;" class="skin-blue"><b> Course Description ~ </b> </label>
+          <%=crs.getCourseDesc()%>
           </div>
-          <div class="row" style="padding-left: 40px;padding-top: 10px;padding-right: 10px">
-          <label style="color:#fff; font-size:large;  width: 30%; background-color: rgb(108, 171, 227); height: 30px; text-align: right;" class="skin-blue"><b>Decs :</b> </label>
-          dfsadfasfd
-          </div>
-          <div class="row" style="padding-left: 40px;padding-top: 10px;padding-right: 10px">
-          <label style="color:#fff; font-size:large;  width: 30%; background-color: rgb(108, 171, 227); height: 30px; text-align: right;" class="skin-blue"><b>Decs :</b> </label>
-          dfsadfasfd
-          </div>
+         
           </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -120,7 +131,7 @@
   </div>
 </div>
                     
-<div class="modal fade" id="myModal12" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="myModal12<%=crs.getCourseID()%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -130,20 +141,20 @@
       <div class="modal-body">
           
       <div class="box-body">
-                      <form role="form" data-toggle="validator" action="Controllor?action=update_Course" method="post">
+                      <form role="form" data-toggle="validator" action="Controller?action=updatecourse" method="post">
                       <div class="form-group">
                       <label>Course ID</label>
-                      <input type="text" class="form-control" id="course_id" name="course_id" placeholder="Course ID" required/>
+                      <input type="text" class="form-control" id="course_id" name="course_id" placeholder="Course ID" value="<%=crs.getCourseID()%>" required/>
                     </div>
                     <div class="form-group">
                       <label>Course Name</label>
-                      <input type="text" class="form-control" id="course_name" name="course_name" placeholder="Course Name" required/>
+                      <input type="text" class="form-control" id="course_name" name="course_name" placeholder="Course Name" value="<%=crs.getCourseName()%>" required/>
                     </div>
                     
                     
                     <div class="form-group">
                       <label>Course Description</label>
-                      <input type="text" class="form-control" id="course_desc" name="course_desc" placeholder="Description" required/>
+                      <input type="text" class="form-control" id="course_desc" name="course_desc" placeholder="Description" value="<%=crs.getCourseDesc()%>" required/>
                     </div>
                     
                   <div >
@@ -164,7 +175,7 @@
 </div>
 
                     
-   <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal fade" id="myModal1<%=crs.getCourseID()%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -172,11 +183,11 @@
         <h4 class="modal-title" id="myModalLabel">Delete</h4>
       </div>
       <div class="modal-body">
-        ...
+          Do You Want to delete <b><%=crs.getCourseName()%></b> ?
       </div>
       <div class="modal-footer">
-          <form action="Controllor?action=detete_course" method="post" >
-              <input type="hidden" name="course_id" value="course_id">
+          <form action="Controller?action=deletecourse" method="post" >
+              <input type="hidden" name="course_id" value="<%=crs.getCourseID()%>">
         <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
         <button type="submit" class="btn btn-primary">Yes</button>
           </form>
@@ -185,14 +196,17 @@
   </div>
 </div>                 
 
-                      
+                      <%
+                                    }
+                          %> 
                       
                       
                     </tbody>
                     <tfoot>
                       <tr>
-                      <th>Sr. No.</th>
-                      <th>Course ID</th>
+                    
+                       <th>Course ID</th>
+                      <th>Course Name</th>
                       <th>Description</th>
                       <th>Utility</th>
                         </tr>
@@ -207,7 +221,7 @@
                     <h3> Add Course</h3>
                     </div>
                 <div class="box-body">
-                      <form role="form" data-toggle="validator" action="Controllor?action=create_Course" method="post">
+                      <form role="form" data-toggle="validator" action="Controller?action=addcourse" method="post">
                       <div class="form-group">
                       <label>Course ID</label>
                       <input type="text" class="form-control" id="course_id" name="course_id" placeholder="Course ID" required/>
