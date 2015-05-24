@@ -41,8 +41,13 @@
               </a>
             </li>
             <li>
-                <a href="Controller?action=result">
-                  <i class="fa fa-check"></i><span> Result</span>
+                <a href="Controller?action=studentresult">
+                  <i class="fa fa-check"></i><span>Student Result</span>
+                </a>
+            </li>
+            <li>
+                <a href="Controller?action=instructorresult">
+                  <i class="fa fa-check"></i><span>Instructor Result</span>
                 </a>
             </li>
             <li>

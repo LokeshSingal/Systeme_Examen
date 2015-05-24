@@ -4,6 +4,7 @@
     Author     : lokesh
 --%>
 <!DOCTYPE html>
+<%@include file="User_Req_details.jsp" %>
 <html>
   <head>
     <meta charset="UTF-8">
