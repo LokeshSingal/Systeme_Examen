@@ -167,7 +167,7 @@
                     <div class="box box-primary" style="width:100%;margin-left: 7px">
                 
                   <div class="box-body">
-                      <form role="form" data-toggle="validator" action="Controllor?action=updateprofile" method="post">
+                      <form role="form" data-toggle="validator" action="Controller?action=updateuser" method="post">
                    
                           <% 
                           
@@ -205,7 +205,7 @@
                     </div>
                     <div class="form-group">
                       <label>Education</label>
-                      <input type="text" class="form-control" id="education" name="education" value="<%= user.getProgram()%>" placeholder="Education Degree" required/>
+                      <input type="text" class="form-control" id="education" name="program" value="<%= user.getProgram()%>" placeholder="Education Degree" required/>
                     </div>
                        <div class="form-group">
                       <label>Institute</label>
@@ -226,7 +226,7 @@
                   <div class="tab-pane" id="tab_2">
                    <div class="box box-primary" style="width:100%;margin-left: 7px">
                 <div class="box-body">
-                      <form role="form" data-toggle="validator" action="Controller?action=updateprofile" method="post">
+                      <form role="form" data-toggle="validator" action="Contreller?action=updatelogin" method="post">
                       <div class="form-group">
                           
                       <label>Username</label>

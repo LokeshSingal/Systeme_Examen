@@ -27,16 +27,35 @@ public class Profile extends ActionUser {
         String action = req.getParameter("action");
         
         Login l=new Login();
+        User_info userP = null;
         l=(Login)req.getSession().getAttribute("User");
     
         int user_id = l.getUser_id();
        
         
       
-        User_info userP = null;
-       if(action.equals("updateprofile") )
+       
+        
+       if(action.equals("updateuser") )
        {
            userP = getUser_infoObjectRequest(req, res);
+           
+            try {
+               User_InfoDaoImple user_db = new User_InfoDaoImple();
+               user_db.update(userP);
+               
+               req.getSession().setAttribute("userP", userP);
+                
+               
+                action = "profile";
+           } catch (Exception e) {
+                System.err.println(e);
+           }
+           
+           
+       }
+       else if(action.equals("updatelogin"))
+       {
            String username = req.getParameter("username");
            String password = req.getParameter("new_password");
            String email = req.getParameter("email");
@@ -46,16 +65,13 @@ public class Profile extends ActionUser {
            login.setUser_password(password);
            login.setUser_username(username);
            
-            try {
-               User_InfoDaoImple user_db = new User_InfoDaoImple();
-               user_db.update(userP);
-                LoginDaoImple login_db = new LoginDaoImple();
+           try {
+               LoginDaoImple login_db = new LoginDaoImple();
                 login_db.update(login);
-               
                 action = "profile";
            } catch (Exception e) {
+               System.err.println(e);
            }
-           
            
        }
        else if(action.equals("profile"))

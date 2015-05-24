@@ -32,7 +32,7 @@ public class test {
          */
         User_InfoDaoImple uid = new User_InfoDaoImple();
         User_info ui = new User_info();
-        ui.setUser_id(4);
+        ui.setUser_id(29);
         ui.setGender("M");
         ui.setInstitute_name("DAIICT");
         ui.setImage("v ipdatedjhsbvhb");
@@ -53,7 +53,7 @@ public class test {
          if (uid.update(ui)) {
          System.out.println("updated_user_info");
          }
-
+/*
          if (uid.delete(1)) {
          System.out.println("deleted_user_info");
          }
