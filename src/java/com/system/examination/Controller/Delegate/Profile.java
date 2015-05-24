@@ -21,7 +21,8 @@ public class Profile implements Action{
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse res) {
         String view = "Profile.jsp";
-       Login l=new Login();
+        
+        Login l=new Login();
         l=(Login)req.getSession().getAttribute("User");
     
         int user_id = l.getUser_id();

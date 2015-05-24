@@ -30,7 +30,11 @@
                 <a href="Controller?action=profile">
                   <i class="glyphicon glyphicon-user"></i><span> Profile</span>
                 </a></li>
-            
+            <li>
+              <a href="Controller?action=course">
+                <i class="fa fa-th-list"></i> <span>Course</span> 
+              </a>
+            </li>
             <li>
               <a href="Controller?action=exam_home">
                 <i class="fa fa-book"></i> <span>Exam</span> 
