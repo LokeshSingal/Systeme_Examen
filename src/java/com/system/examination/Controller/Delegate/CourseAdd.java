@@ -6,6 +6,9 @@
 package com.system.examination.Controller.Delegate;
 
 import com.system.examination.Controller.Action;
+import com.system.examination.Controller.action.ActionCourse;
+import com.system.examination.DaoImplementaion.CourseDaoImple;
+import com.system.examination.model.Course;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -13,11 +16,25 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author lokesh
  */
-public class CourseAdd implements Action {
+public class CourseAdd extends ActionCourse {
 
     @Override
-    public String execute(HttpServletRequest req, HttpServletResponse res) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String execute(HttpServletRequest req, HttpServletResponse resp) {
+       
+         String view = "Course.jsp";
+      
+        try {
+            CourseDaoImple Course_db = new CourseDaoImple();
+            Course course = getCourseObjectRequest(req, resp);
+            Course_db.insert(course);
+            putCourseRequest(req, resp);
+        }
+        catch(Exception e) {
+            req.setAttribute("error", e.toString() + "[CourseAdd.java]");
+            return "error.jsp";
+        }
+        return view;
     }
+    
     
 }
