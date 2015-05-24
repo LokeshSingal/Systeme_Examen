@@ -37,9 +37,9 @@ public class UpdateQuestion extends ActionQuestionBank{
             {
             System.out.println("Kishan");
             Question_Bank q=getQuestionObjectRequest(req, res);    
-            System.out.println(q.getLevel()+q.getQuestion()+q.getSolution()+q.getOptionA()+q.getOptionB()+q.getOptionC()+q.getOptionD());
-            qd.update(q);
-                
+            q.setQues_id(Integer.parseInt(req.getParameter("q_id")));
+            System.out.println(q.getQues_id()+q.getQuestion()+q.getSolution()+q.getOptionA()+q.getOptionB()+q.getOptionC()+q.getOptionD());
+            qd.update(q); 
             putQuestionRequest(req, res);
             return "QuestionBank.jsp";
             }
