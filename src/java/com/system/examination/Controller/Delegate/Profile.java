@@ -27,14 +27,13 @@ public class Profile extends ActionUser {
         String action = req.getParameter("action");
         
         Login l=new Login();
-        User_info userP = null;
         l=(Login)req.getSession().getAttribute("User");
     
         int user_id = l.getUser_id();
        
         
       
-       
+        User_info userP = null;
         
        if(action.equals("updateuser") )
        {
@@ -42,12 +41,14 @@ public class Profile extends ActionUser {
            
             try {
                User_InfoDaoImple user_db = new User_InfoDaoImple();
-               user_db.update(userP);
                
+               if( user_db.update(userP) )
+               {
                req.getSession().setAttribute("userP", userP);
-                
-               
-                action = "profile";
+               req.getSession().setAttribute("User", l);
+               return "Profile.jsp";
+               }
+            
            } catch (Exception e) {
                 System.err.println(e);
            }
@@ -64,11 +65,20 @@ public class Profile extends ActionUser {
            login.setUser_email(email);
            login.setUser_password(password);
            login.setUser_username(username);
+           login.setUser_id(l.getUser_id());
            
            try {
                LoginDaoImple login_db = new LoginDaoImple();
-                login_db.update(login);
-                action = "profile";
+                if(login_db.update(login))
+                {
+             
+                    User_InfoDaoImple user_db = new User_InfoDaoImple();
+             userP = user_db.findByID(user_id);
+             req.setAttribute("User", login);
+             req.setAttribute("userP", userP);
+             
+                return view;
+                }
            } catch (Exception e) {
                System.err.println(e);
            }
@@ -79,6 +89,8 @@ public class Profile extends ActionUser {
         try {
             User_InfoDaoImple user_db = new User_InfoDaoImple();
              userP = user_db.findByID(user_id);
+             req.setAttribute("userP", userP);
+             return view;
         }
         catch(Exception e) {
             req.setAttribute("error", e);
@@ -86,10 +98,8 @@ public class Profile extends ActionUser {
         }   
        }
         
-        
-        req.setAttribute("userP", userP);
-
         return view;
+        
 
     }
     

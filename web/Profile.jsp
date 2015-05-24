@@ -78,7 +78,7 @@
                   <label  style="color: #007bb6;font-size: large;">Name </label> 
               </div>
                 <div class="col-md-6">
-                  <label style="text-align: left;font-size: large "> <%=l.getUser_username()%> </label>
+                  <label style="text-align: left;font-size: large "> <%=user.getName()%> </label>
               </div>
 
             </div>
@@ -98,7 +98,7 @@
                     }
                     else
                     {
-                        gender= "female";
+                        gender= "Female";
                     }
                     
                     
@@ -114,7 +114,7 @@
                   <label  style="color: #007bb6;font-size: large;">Education </label> 
               </div>
                 <div class="col-md-6">
-                  <label style="text-align: left;font-size: large ">  Msc IT </label>
+                  <label style="text-align: left;font-size: large ">  <%=user.getProgram()%> </label>
               </div>
 
             </div>
@@ -124,7 +124,7 @@
                   <label  style="color: #007bb6;font-size: large;">Institute </label> 
               </div>
                 <div class="col-md-6">
-                  <label style="text-align: left;font-size: large ">   DAIICT </label>
+                  <label style="text-align: left;font-size: large "> <%=user.getInstitute_name()%> </label>
               </div>
 
             </div>
@@ -226,7 +226,7 @@
                   <div class="tab-pane" id="tab_2">
                    <div class="box box-primary" style="width:100%;margin-left: 7px">
                 <div class="box-body">
-                      <form role="form" data-toggle="validator" action="Contreller?action=updatelogin" method="post">
+                      <form role="form" data-toggle="validator" action="Controller?action=updatelogin" method="post">
                       <div class="form-group">
                           
                       <label>Username</label>
