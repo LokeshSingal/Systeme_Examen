@@ -29,11 +29,13 @@ public class InsertQuestion extends ActionQuestionBank{
                 Question_Bank q=getQuestionObjectRequest(req, res);
                 q.setCourse_id("IT615");
                 
-               
+               //System.out.println(q.getLevel()+q.getQuestion()+q.getSolution()+q.getOptionA()+q.getOptionB()+q.getOptionC()+q.getOptionD());
+               // if(q!=null)
+                //{
                 Question_BankDaoImple qb=new Question_BankDaoImple();
                 System.out.println(l.getUser_id());
-                q.setCourse_id("IT615");
-                q.setInstructor_id(l.getUser_id());
+                //q.setCourse_id("IT615");
+                //q.setInstructor_id(l.getUser_id());
                     
                     qb.insert(q);
                   if(1>0)

@@ -7,6 +7,7 @@
 package com.system.examination.Controller.Delegate;
 
 import com.system.examination.Controller.action.ActionQuestionBank;
+import com.system.examination.DaoImplementaion.CourseDaoImple;
 import com.system.examination.DaoImplementaion.Question_BankDaoImple;
 import com.system.examination.model.Question_Bank;
 import java.util.logging.Level;
@@ -28,12 +29,17 @@ public class UpdateQuestion extends ActionQuestionBank{
             {
             int id=Integer.parseInt(req.getParameter("q_id"));
             req.setAttribute("question",qd.findById(id));
+            CourseDaoImple cd=new CourseDaoImple();
+            req.setAttribute("courses", cd.getAll());
             return "AddQuestion.jsp";
             }
             if(req.getParameter("action").equals("update_question"))
             {
+            System.out.println("Kishan");
             Question_Bank q=getQuestionObjectRequest(req, res);    
+            System.out.println(q.getLevel()+q.getQuestion()+q.getSolution()+q.getOptionA()+q.getOptionB()+q.getOptionC()+q.getOptionD());
             qd.update(q);
+                
             putQuestionRequest(req, res);
             return "QuestionBank.jsp";
             }

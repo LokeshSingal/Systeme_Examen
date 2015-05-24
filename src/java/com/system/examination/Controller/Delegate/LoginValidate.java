@@ -9,7 +9,9 @@ package com.system.examination.Controller.Delegate;
 import com.system.examination.Controller.Action;
 import com.system.examination.Controller.action.*;
 import com.system.examination.DaoImplementaion.LoginDaoImple;
+import com.system.examination.DaoImplementaion.User_InfoDaoImple;
 import com.system.examination.model.Login;
+import com.system.examination.model.User_info;
 import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -33,6 +35,9 @@ public class LoginValidate implements Action{
             if(l.getUser_password().equals(req.getParameter("password")))
                     {
                         req.getSession().setAttribute("User", l);
+                        User_InfoDaoImple user_db = new User_InfoDaoImple();
+                        User_info userP = user_db.findByID(l.getUser_id());
+                        req.getSession().setAttribute("userP", userP);
                         return "Dashbord.jsp";
                     }
         }

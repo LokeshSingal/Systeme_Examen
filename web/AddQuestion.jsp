@@ -3,10 +3,16 @@
     Created on : 20 May, 2015, 1:59:32 AM
     Author     : lokesh
 --%>
+<%@page import="java.util.ArrayList"%>
 <%@include file="User_Req_details.jsp" %>
 <!DOCTYPE html>
 <%
+    ArrayList<Course> c1=(ArrayList<Course>)request.getAttribute("courses");
     Question_Bank q=(Question_Bank) request.getAttribute("question");
+    if(q==null)
+    {
+        q=new Question_Bank();
+    }
 %>
 <html>
   <head>
@@ -66,19 +72,20 @@
                     <div class="form-group" required>
                       <label>Course</label>
                       <select class="form-control" name="course" id="course" required>
-                        <option>option 1</option>
-                        <option>option 2</option>
-                        <option>option 3</option>
-                        <option>option 4</option>
-                        <option>option 5</option>
+                          <%for(Course c:c1){ 
+                          if(c.getCourseID()==q.getCourse_id()){ %>
+                          <option selected><%= c.getCourseID() %></option>
+                          <% } else { %>
+                          <option selected><%= c.getCourseID() %></option>
+                          <% }} %>
                       </select>
                     </div>
                     <div class="form-group">
                       <label>Level</label>
                       <select class="form-control" id="level" name="level" required>
-                        <option>Easy</option>
-                        <option>Medium</option>
-                        <option>Hard</option>
+                          <%if(q.getLevel().equals("Easy")) { %><option selected>Easy</option><%} else { %><option>Easy</option><% }%>
+                        <%if(q.getLevel().equals("Medium")) { %><option selected>Medium</option><%} else { %><option>Medium</option><% }%>
+                        <%if(q.getLevel().equals("Hard")) { %><option selected>Hard</option><%} else { %><option>Hard</option><% }%>
                       </select>
                     </div>
                   <div class='box box-info collapsed-box' style="margin-left: 0px">
@@ -92,39 +99,39 @@
                 </div><!-- /.box-header -->
                 <div class='box-body pad'>
                   
-                    <textarea class="form-control" id="ques_desc" name="ques_desc" rows="10" cols="80" >
-                                            
+                    <textarea class="form-control" id="ques_desc" name="ques_desc" rows="10" cols="80">
+                     <%=q.getQ_desc() %>                       
                     </textarea>
                   
                 </div>
               </div>
                     <div class="form-group">
                       <label>Question</label>
-                      <textarea class="form-control" id="ques" name="ques" rows="3" placeholder="Question" required></textarea>
+                      <textarea class="form-control" id="ques" name="ques" rows="3" placeholder="Question"  required><%=q.getQuestion() %></textarea>
                     </div>
                     <div class="form-group">
                       <label>Option A</label>
-                      <textarea class="form-control" id="optionA" rows="3" name="optionA" placeholder="Option A" required></textarea>
+                      <textarea class="form-control" id="optionA" rows="3" name="optionA" placeholder="Option A"  required><%=q.getOptionA() %></textarea>
                     </div>
                     <div class="form-group">
                       <label>Option B</label>
-                      <textarea class="form-control" id="optionB" rows="3" name="optionB" placeholder="OptionB" required></textarea>
+                      <textarea class="form-control" id="optionB" rows="3" name="optionB" placeholder="OptionB" required><%=q.getOptionB() %></textarea>
                     </div>
                     <div class="form-group">
                       <label>Option C</label>
-                      <textarea class="form-control" id="optionC" rows="3" name="optionC" placeholder="OptionC" ></textarea>
+                      <textarea class="form-control" id="optionC" rows="3" name="optionC" placeholder="OptionC"  ><%=q.getOptionC() %></textarea>
                     </div>
                     <div class="form-group">
                       <label>Option D</label>
-                      <textarea class="form-control" id="optionD" rows="3" name="optionD" placeholder="OptionD"></textarea>
+                      <textarea class="form-control" id="optionD" rows="3" name="optionD" placeholder="OptionD"  ><%=q.getOptionD() %></textarea>
                     </div>
                     <div class="form-group">
                       <label>Solution</label>
                       <select class="form-control" id="solution" name="solution" required>
-                        <option>A</option>
-                        <option>B</option>
-                        <option>C</option>
-                        <option>D</option>
+                          <% if(q.getSolution().equals("A")){ %><option selected>A</option><% } else { %><option>A</option><% } %>
+                        <% if(q.getSolution().equals("B")){ %><option selected>B</option><% } else { %><option>B</option><% } %>
+                        <% if(q.getSolution().equals("C")){ %><option selected>C</option><% } else { %><option>C</option><% } %>
+                        <% if(q.getSolution().equals("D")){ %><option selected>D</option><% } else { %><option>D</option><% } %>
                       </select>
                     </div>
                       
@@ -140,7 +147,7 @@
                      else{
                     %>
                     <button type="submit" class="btn btn-primary pull-right">Update Qustion</button>
-                    <input type="hidden" name="action" value="add_question">
+                    <input type="hidden" name="action" value="update_question">
                     <% } %>
                   </div>
                   </div>

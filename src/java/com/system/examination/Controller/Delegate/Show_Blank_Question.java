@@ -8,6 +8,7 @@ package com.system.examination.Controller.Delegate;
 
 import com.system.examination.Controller.Action;
 import com.system.examination.DaoImplementaion.CourseDaoImple;
+import com.system.examination.model.Course;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,7 +31,7 @@ public class Show_Blank_Question implements Action{
             System.out.println(e);
         }
         req.setAttribute("question", null);
-        req.setAttribute("courses",);
+        req.setAttribute("courses",c1);
       return "AddQuestion.jsp";
     }
     

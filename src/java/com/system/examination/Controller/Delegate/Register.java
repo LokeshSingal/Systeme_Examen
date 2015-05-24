@@ -49,9 +49,11 @@ public class Register implements Action{
             User_InfoDaoImple ud=new User_InfoDaoImple();
             
             if(ud.insert(u))
-                return "Dashbord.jsp";
+            {
             req.getSession().setAttribute("User", l);
-            
+            req.getSession().setAttribute("userp", ud);
+            return "Dashbord.jsp";
+            }
             }          
         } catch (Exception e) {
             req.setAttribute("error", e.toString()+"Register");

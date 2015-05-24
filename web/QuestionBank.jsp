@@ -100,7 +100,7 @@ ArrayList<Question_Bank> a=(ArrayList<Question_Bank>)request.getAttribute("All_Q
                         
                         <td>
                             <div class="box-body">
-                                <a class="btn btn-app" href="Controllor?action=update_question&q_id=<%=q.getQues_id() %>" >
+                                <a class="btn btn-app" href="Controller?action=edit_question&q_id=<%=q.getQues_id() %>" >
                     <i class="fa fa-edit" style="transform:translate(0px, -10px)" ></i> Edit
                   </a>
                                 <a class="btn btn-app" data-toggle="modal" href="#myModal1<%=q.getQues_id() %>">
