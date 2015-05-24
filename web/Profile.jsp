@@ -8,7 +8,7 @@
 <% 
     Login l=new Login();
     l=(Login)request.getSession().getAttribute("User");
-    User_info user = (User_info) request.getAttribute("userP");
+    User_info user = (User_info) request.getSession().getAttribute("userP");
 %>
 <!DOCTYPE html>
 <html>

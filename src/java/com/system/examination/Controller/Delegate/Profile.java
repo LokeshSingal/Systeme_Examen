@@ -5,7 +5,6 @@
  */
 package com.system.examination.Controller.Delegate;
 
-import com.system.examination.Controller.Action;
 import com.system.examination.Controller.action.ActionUser;
 import com.system.examination.DaoImplementaion.LoginDaoImple;
 import com.system.examination.DaoImplementaion.User_InfoDaoImple;
@@ -22,83 +21,54 @@ public class Profile extends ActionUser {
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse res) {
-        String view = "Profile.jsp";
         
-        String action = req.getParameter("action");
-        
-        Login l=new Login();
-        l=(Login)req.getSession().getAttribute("User");
-    
-        int user_id = l.getUser_id();
-       
-        
-      
-        User_info userP = null;
-        
-       if(action.equals("updateuser") )
-       {
-           userP = getUser_infoObjectRequest(req, res);
-           
-            try {
-               User_InfoDaoImple user_db = new User_InfoDaoImple();
-               
-               if( user_db.update(userP) )
-               {
-               req.getSession().setAttribute("userP", userP);
-               req.getSession().setAttribute("User", l);
-               return "Profile.jsp";
-               }
-            
-           } catch (Exception e) {
-                System.err.println(e);
-           }
-           
-           
-       }
-       else if(action.equals("updatelogin"))
-       {
-           String username = req.getParameter("username");
-           String password = req.getParameter("new_password");
-           String email = req.getParameter("email");
-           
-           Login login = new Login();
-           login.setUser_email(email);
-           login.setUser_password(password);
-           login.setUser_username(username);
-           login.setUser_id(l.getUser_id());
-           
-           try {
-               LoginDaoImple login_db = new LoginDaoImple();
-                if(login_db.update(login))
-                {
-             
-                    User_InfoDaoImple user_db = new User_InfoDaoImple();
-             userP = user_db.findByID(user_id);
-             req.setAttribute("User", login);
-             req.setAttribute("userP", userP);
-             
-                return view;
-                }
-           } catch (Exception e) {
-               System.err.println(e);
-           }
-           
-       }
-       else if(action.equals("profile"))
-       {
-        try {
-            User_InfoDaoImple user_db = new User_InfoDaoImple();
-             userP = user_db.findByID(user_id);
-             req.setAttribute("userP", userP);
-             return view;
+        if(req.getParameter("action").equals("profile"))
+        {
+            return "Profile.jsp";
         }
-        catch(Exception e) {
-            req.setAttribute("error", e);
-            return "error.jsp";
-        }   
-       }
+        if(req.getParameter("action").equals("updateuser"))
+        {
+            Login l=(Login)req.getSession().getAttribute("User");
+            User_info u1=getUser_infoObjectRequest(req, res);
+            u1.setUser_id(l.getUser_id());
+            try{
+                User_InfoDaoImple ud=new User_InfoDaoImple();
+                if(ud.update(u1))
+                {
+                    req.getSession().setAttribute("userP", u1);
+                     return "Profile.jsp";
+                }
+            }
+            catch(Exception e)
+            {
+                System.out.println(e);
+            }
+        }
+        if(req.getParameter("action").equals("updatelogin"))
+        {
+           Login l=(Login)req.getSession().getAttribute("User");
+            //User_info u1=getUser_infoObjectRequest(req, res);
+            //u1.setUser_id(l.getUser_id());
+            try{
+                Login l1=new Login();
+                l1.setUser_username(req.getParameter("username"));
+                l1.setUser_password(req.getParameter("password"));
+                l1.setUser_email(req.getParameter("email"));
+                l1.setUser_id(l.getUser_id());
+                LoginDaoImple ld=new LoginDaoImple();
+                if(ld.update(l1))
+                {
+                    req.getSession().setAttribute("User", l1);
+                     return "Profile.jsp";
+                }
+            }
+            catch(Exception e)
+            {
+                System.out.println(e);
+            }
+        }
         
-        return view;
+        return "Profile.jsp";
         
 
     }
