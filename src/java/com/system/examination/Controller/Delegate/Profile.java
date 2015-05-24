@@ -34,9 +34,29 @@ public class Profile extends ActionUser {
         
       
         User_info userP = null;
-       if(action.equals("updateprofile") )
+        
+       if(action.equals("updateuser") )
        {
            userP = getUser_infoObjectRequest(req, res);
+           
+            try {
+               User_InfoDaoImple user_db = new User_InfoDaoImple();
+               
+               if( user_db.update(userP) )
+               {
+               req.getSession().setAttribute("userP", userP);
+               req.getSession().setAttribute("User", l);
+               return "Profile.jsp";
+               }
+            
+           } catch (Exception e) {
+                System.err.println(e);
+           }
+           
+           
+       }
+       else if(action.equals("updatelogin"))
+       {
            String username = req.getParameter("username");
            String password = req.getParameter("new_password");
            String email = req.getParameter("email");
@@ -45,17 +65,23 @@ public class Profile extends ActionUser {
            login.setUser_email(email);
            login.setUser_password(password);
            login.setUser_username(username);
+           login.setUser_id(l.getUser_id());
            
-            try {
-               User_InfoDaoImple user_db = new User_InfoDaoImple();
-               user_db.update(userP);
-                LoginDaoImple login_db = new LoginDaoImple();
-                login_db.update(login);
-               
-                action = "profile";
+           try {
+               LoginDaoImple login_db = new LoginDaoImple();
+                if(login_db.update(login))
+                {
+             
+                    User_InfoDaoImple user_db = new User_InfoDaoImple();
+             userP = user_db.findByID(user_id);
+             req.setAttribute("User", login);
+             req.setAttribute("userP", userP);
+             
+                return view;
+                }
            } catch (Exception e) {
+               System.err.println(e);
            }
-           
            
        }
        else if(action.equals("profile"))
@@ -63,6 +89,8 @@ public class Profile extends ActionUser {
         try {
             User_InfoDaoImple user_db = new User_InfoDaoImple();
              userP = user_db.findByID(user_id);
+             req.setAttribute("userP", userP);
+             return view;
         }
         catch(Exception e) {
             req.setAttribute("error", e);
@@ -70,10 +98,8 @@ public class Profile extends ActionUser {
         }   
        }
         
-        
-        req.setAttribute("userP", userP);
-
         return view;
+        
 
     }
     

@@ -7,6 +7,7 @@ package com.system.examination.Controller.action;
 
 import com.system.examination.Controller.Action;
 import com.system.examination.DaoImplementaion.User_InfoDaoImple;
+import com.system.examination.model.Login;
 import com.system.examination.model.User_info;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +21,12 @@ public abstract class ActionUser implements Action {
     
      protected User_info getUser_infoObjectRequest(HttpServletRequest req, HttpServletResponse resp){
         
+         Login us = new Login();
          
+         
+        us =(Login) req.getSession().getAttribute("User");
+        
+        
         String email = req.getParameter("email");
         String username = req.getParameter("username");
         String password = req.getParameter("password");
@@ -32,8 +38,8 @@ public abstract class ActionUser implements Action {
         
         
         User_info user = new User_info();
-        
-       
+         
+        user.setUser_id(us.getUser_id());
         user.setName(name);
        // user.setImage(image);
         user.setInstitute_name(institute);

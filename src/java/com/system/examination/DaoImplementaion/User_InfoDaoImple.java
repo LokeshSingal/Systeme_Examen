@@ -71,8 +71,13 @@ public class User_InfoDaoImple implements User_InfoDaoInterface{
                 "' " +"WHERE user_id = '" + ui.getUser_id()+ "' ";
         
         int n =stmt.executeUpdate(query);
+        
         if(n > 0 )
-          return true;
+        {
+            System.out.println("updated user");
+            return true;
+        }
+          
         else
           return false;
     }

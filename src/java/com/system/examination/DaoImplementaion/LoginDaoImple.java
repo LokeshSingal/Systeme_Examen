@@ -76,9 +76,6 @@ public class LoginDaoImple implements LoginDaoInterface  {
        String query=" UPDATE login_credentials set username = '" + l.getUser_username()+ 
                 "'," + "password = '" + l.getUser_password()+ 
                 "'," + "email = '"+ l.getUser_email() +
-                "'," + "instructor = '" + l.getPri_Instructor()+
-                "'," + "student = '" + l.getPri_Student()+
-                "'," + "admin = '"+ l.getPri_Admin()+
                 "'"  + "WHERE user_id = '" + l.getUser_id() + "' ";
       
          int n =stmt.executeUpdate(query);
