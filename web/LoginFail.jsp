@@ -35,9 +35,9 @@ We could not find the page you were looking for. Meanwhile, you </p>
 
        
         <label class="pull-right">
-         <a href="Controllor?action=register" class="text-center">Register</a>    
+         <a href="Controller?action=register" class="text-center">Register</a>    
          or
-         <a href="Controllor?action=login" class="text-center">Login</a>
+         <a href="Controller?action=login" class="text-center">Login</a>
          </label>
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
