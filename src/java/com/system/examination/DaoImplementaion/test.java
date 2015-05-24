@@ -76,7 +76,7 @@ public class test {
         l.setPri_Student(0);
         uid = new User_InfoDaoImple();
         ui = new User_info();
-        ui.setUser_id(ld.getUserByEmail("ajudiya.kishan007@gamil.com").getUser_id());
+//        ui.setUser_id(ld.getUserByEmail("ajudiya.kishan007@gamil.com").getUser_id());
         //ui.setGender("M");
        // ui.setInstitute_name("DAIICT");
        // ui.setImage("v ipdatedjhsbvhb");
