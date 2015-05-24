@@ -3,6 +3,7 @@
     Created on : 20 May, 2015, 3:21:55 AM
     Author     : lokesh
 --%>
+<%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <%@include file="User_Req_details.jsp" %>
 <html>
@@ -47,6 +48,12 @@
 
         <!-- Code of middel part -->
       
+             <%
+        
+             ArrayList<Result> list = (ArrayList<Result>)request.getAttribute("courselist");
+        
+        
+        %>
             
         <div class="row" style="margin-left: 40px;margin-top: 20px">
             <div class="col-xs-12">
@@ -70,10 +77,10 @@
                       <td>11/2/2015</td>
                       <td>70</td>
                       <td><div class="box-body">
-                              <a class="btn btn-app" href="Controllor?action=view_exam_result&id=test_id">
+                              <a class="btn btn-app" href="Controller?action=student_view_exam_result&id=test_id">
                     <i class="fa fa-eye" style="transform:translate(0px, -10px)"></i> View
                   </a>
-                </div><!-- /.box-body --></td></td>                    
+                </div><!-- /.box-body --></td>                   
                       </tr>
                       
                     </tbody>

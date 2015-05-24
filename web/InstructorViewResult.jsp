@@ -4,6 +4,7 @@
     Author     : lokesh
 --%>
 <!DOCTYPE html>
+<%@include file="User_Req_details.jsp" %>
 <html>
   <head>
     <meta charset="UTF-8">
@@ -74,7 +75,7 @@
                       <td>Java</td>
                       <td>11/6/2015</td>
                       <td><div class="box-body">
-                              <a class="btn btn-app" href="Controllor?action=view_exam_result&id=testid">
+                              <a class="btn btn-app" href="Controller?action=instructor_view_exam_result&id=testid">
                     <i class="fa fa-eye" style="transform:translate(0px, -10px)"></i> View
                   </a>
                   <a class="btn btn-app" data-toggle="modal" href="#myModal1">

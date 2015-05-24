@@ -22,6 +22,10 @@ public class StudentResult extends ActionResult{
         {
             return "StudentViewResult.jsp";
         }
+        if(req.getParameter("action").equalsIgnoreCase("student_view_exam_result"))
+        {
+            return "StudentViewExamResult.jsp";
+        }
             
         
         return "StudentViewResult.jsp";

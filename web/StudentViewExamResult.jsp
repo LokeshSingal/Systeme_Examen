@@ -5,6 +5,7 @@
 --%>
 
 <!DOCTYPE html>
+<%@include file="User_Req_details.jsp" %>
 <html>
   <head>
     <meta charset="UTF-8">
@@ -41,7 +42,7 @@
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="Controllor?action=result">Result</a></li>
+            <li><a href="Controller?action=result">Result</a></li>
             <li class="active">Exam Result</li>
           </ol>
         </section>
@@ -49,7 +50,6 @@
 
         <!-- Code of middel part -->
       
-            
          
         <div class="row" style="margin-left:40px;margin-top: 20px ">
               <div class="box">
@@ -65,6 +65,9 @@
                        </tr>
                     </thead>
                     <tbody>
+                        <% 
+                        
+                        %>
                       <tr>
                         <td>n</td>
                       <td>ques1</td>

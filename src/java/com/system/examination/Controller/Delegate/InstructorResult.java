@@ -22,7 +22,12 @@ public class InstructorResult extends ActionResult{
         {
             return "InstructorViewResult.jsp";
         }
-        return "InstructorViewResult.jsp";
+          if(req.getParameter("action").equals("instructor_view_exam_result"))
+          {
+              return "InstructorViewExamResult.jsp";
+          }
+          
+          return "InstructorViewResult.jsp";
     }
     
 }

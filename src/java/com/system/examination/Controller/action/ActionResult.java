@@ -38,4 +38,5 @@ public abstract class ActionResult implements Action {
         ArrayList<Result> result = rd.getAll();
         req.setAttribute("result", result);
     }
+    
 }
