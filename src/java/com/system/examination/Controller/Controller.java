@@ -19,9 +19,10 @@ public class Controller extends HttpServlet {
         
         
         Action action = getActionFromConfig( theAction );
-        //System.out.println(theAction);
+        System.out.println(theAction);
+        System.out.println(action);
         String view = action.execute(request, response);
-        //System.out.println(view);
+        
         RequestDispatcher rd = request.getRequestDispatcher(view);
         rd.forward(request, response);    
         
@@ -49,10 +50,10 @@ public class Controller extends HttpServlet {
         
         Properties map = new Properties();
         map.load( this.getClass().getClassLoader().getResourceAsStream( ACTION_MAPPING ));
-        
+        System.out.println("123456");
         String action_class = map.getProperty( 
                 theAction.toLowerCase() );    
-        
+        System.out.println(action_class);
         Action action = (Action) ObjectCreator
                 .createObject(action_class);
         
