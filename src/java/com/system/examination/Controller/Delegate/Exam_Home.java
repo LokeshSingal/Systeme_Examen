@@ -5,7 +5,6 @@
  */
 package com.system.examination.Controller.Delegate;
 
-import com.system.examination.Controller.action.*;
 import com.system.examination.Controller.Action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,16 +13,15 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author lokesh
  */
-public class ExamUpdate implements Action {
+public class Exam_Home implements Action {
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse res) {
-       String view = "CreateExam.jsp";
-       
-       
-       // code ************************/
-       
-       return view;
+        
+        String view = "Exam_Home.jsp";
+        return view;
     }
+    
+    
     
 }

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package com.system.examination.Controller.Delegate;
+
 import com.system.examination.Controller.Action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,13 +13,14 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author lokesh
  */
-public class ExamAdd implements Action {
+public class Dashbord implements Action {
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse res) {
-        String create = "CreateExam.jsp";
-                
-                return create;
+
+        String view = "Dashbord.jsp";
+        return view;
     }
+    
     
 }

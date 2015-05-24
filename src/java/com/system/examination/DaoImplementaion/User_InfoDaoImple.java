@@ -100,6 +100,29 @@ public class User_InfoDaoImple implements User_InfoDaoInterface{
         return userinfo;
     }
     
+    public User_info findByID(int u_id) throws SQLException{
+        User_info ui=null;
+        
+         Statement stmt;
+        stmt = con.createStatement();        
+        ResultSet rs = stmt.executeQuery("SELECT * FROM user_info WHERE user_id='"+ u_id +"' ");
+        while ( rs.next() ) {
+            ui = new User_info();
+            ui.setUser_id(Integer.parseInt(rs.getString("user_id")));
+            ui.setGender(rs.getString("gender") );
+            ui.setImage(rs.getString("Image"));
+            ui.setInstitute_name(rs.getString("Institute_name"));
+            ui.setName(rs.getString("name"));
+            ui.setProgram(rs.getString("Program"));
+            ui.setUser_id(rs.getInt("user_id"));
+            
+            
+        }        
+        
+        
+        return ui;
+    }
+    
     
     
 }

@@ -3,7 +3,12 @@
     Created on : 20 May, 2015, 2:13:49 AM
     Author     : lokesh
 --%>
-
+<%@page import="com.system.examination.model.Login"%>
+<% 
+    Login l=new Login();
+    l=(Login)request.getSession().getAttribute("User");
+    
+%>
 <!DOCTYPE html>
 <html>
   <head>

@@ -1,3 +1,11 @@
+<%@page import="com.system.examination.model.Login"%>
+<% 
+    Login l=new Login();
+    l=(Login)request.getSession().getAttribute("User");
+    
+%>
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -17,7 +25,7 @@
 
       <!-- Code of left side user panel -->
       
-      <jsp:include page="Left-side_User_Menu.jsp" flush="true" />
+      <%@include file="Left-side_User_Menu.jsp"  %>
       
       <!-- /Code of left side user panel -->
    <!-- Content Wrapper. Contains page content -->
@@ -45,7 +53,7 @@
                 <div class="icon">
                   <i class="glyphicon glyphicon-edit"></i>
                 </div>
-                <a href="Controllor?action=create_exam" class="small-box-footer">
+                <a href="Controller?action=create_exam" class="small-box-footer">
                   Proceed <i class="fa fa-arrow-circle-right"></i>
                 </a>
               </div>
@@ -80,7 +88,7 @@
                       <td>60</td>
                       <td>11/6/2015</td>
                       <td><div class="box-body">
-                   <a class="btn btn-app" href="Controllor?action=update_exam">
+                   <a class="btn btn-app" href="Controller?action=update_exam">
                     <i class="fa fa-edit" style="transform:translate(0px, -10px)" ></i> Edit
                   </a>
                  <a class="btn btn-app" data-toggle="modal" href="#myModal1<%= i %>">
@@ -89,7 +97,7 @@
                   <a class="btn btn-app" data-toggle="modal" href="#myModal<%= i %>">
                     <i class="fa fa-eye" style="transform:translate(0px, -10px)"></i> View
                   </a>
-                  <a class="btn btn-app" href="Controllor?action=exam_preview">
+                  <a class="btn btn-app" href="Controller?action=exam_preview">
                     <i class="fa fa-play" style="transform:translate(0px, -10px)"></i> Preview
                   </a>
                 </div><!-- /.box-body --></td>
@@ -143,7 +151,7 @@
         ...
       </div>
       <div class="modal-footer">
-          <form action="Controllor?action=detete_exam" method="post" >
+          <form action="Controller?action=detete_exam" method="post" >
               <input type="hidden" name="test_id" value=" value of exam id">
         <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
         <button type="submit" class="btn btn-primary">Yes</button>

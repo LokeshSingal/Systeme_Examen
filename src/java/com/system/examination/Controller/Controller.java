@@ -21,6 +21,7 @@ public class Controller extends HttpServlet {
         Action action = getActionFromConfig( theAction );
         System.out.println(theAction);
         String view = action.execute(request, response);
+        System.out.println(view);
         RequestDispatcher rd = request.getRequestDispatcher(view);
         rd.forward(request, response);    
         
@@ -51,9 +52,10 @@ public class Controller extends HttpServlet {
         
         String action_class = map.getProperty( 
                 theAction.toLowerCase() );    
-        //System.out.println(theAction);
+        
         Action action = (Action) ObjectCreator
-                .createObject(action_class);       
+                .createObject(action_class);
+        
         return action;
     }
 

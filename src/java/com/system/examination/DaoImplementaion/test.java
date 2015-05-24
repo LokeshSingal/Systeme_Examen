@@ -27,7 +27,8 @@ public class test {
     public static void main(String[] args) throws SQLException, ClassNotFoundException, ParseException {
 
         /**
-         * *************************** User_info TESTING OK **************************
+         * *************************** User_info TESTING OK
+         * **************************
          */
         User_InfoDaoImple uid = new User_InfoDaoImple();
         User_info ui = new User_info();
@@ -37,8 +38,14 @@ public class test {
         ui.setImage("v ipdatedjhsbvhb");
         ui.setName("PMJ");
         ui.setProgram("Null");
-       
+
         
+        /*
+        if (uid.findByID(29) != null);
+        {
+            System.out.println("Rcord found");
+        }
+
         /* if (uid.insert(ui)) {
          System.out.println("inserted in user_info");
          }
@@ -78,21 +85,20 @@ public class test {
         ui = new User_info();
 //        ui.setUser_id(ld.getUserByEmail("ajudiya.kishan007@gamil.com").getUser_id());
         //ui.setGender("M");
-       // ui.setInstitute_name("DAIICT");
-       // ui.setImage("v ipdatedjhsbvhb");
+        // ui.setInstitute_name("DAIICT");
+        // ui.setImage("v ipdatedjhsbvhb");
         //ui.setName("PMJ");
         //ui.setProgram("Null");
-       
-        
-         //if (uid.insert(ui)) {
-         System.out.println(ui.getUser_id());
+
+        //if (uid.insert(ui)) {
+        System.out.println(ui.getUser_id());
          //}
-        
-/*         
+
+        /*         
          if (ld.insert(l)) {
          System.out.println("inserted in login_credentials");
          }
-/*
+         /*
          /*      
          if (ld.update(l)) {
          System.out.println("updated login_credentials");
@@ -185,12 +191,12 @@ public class test {
         el.setShow_instant_result(0);
         el.setExam_username("Test1");
         el.setExam_password("password");
-        
+
         /*
          if (eld.insert(el)) {
          System.out.println("inserted exam_list");
          }
-/*
+         /*
          /*       
          if (eld.update(el)) {
          System.out.println("updated");
@@ -211,7 +217,6 @@ public class test {
         
         
          /*****************************      Exam_Question TESTING OK  ***************************/
-
         Exam_QuestionDaoImple ed = new Exam_QuestionDaoImple();
         Exam_Questions eq = new Exam_Questions();
 
@@ -246,19 +251,17 @@ public class test {
         ResultDaoImple rd = new ResultDaoImple();
         Result r = new Result();
 
-        
-       
         r.setR_exam_id(47);
         r.setR_user_id(1);
         r.setR_Date(dt);
         r.setScore(81);
-/*
-       if (rd.insert(r)) {
-            System.out.println("inserted");
-        }
+        /*
+         if (rd.insert(r)) {
+         System.out.println("inserted");
+         }
    
-     /* 
-       Object x = rd.getAll();
+         /* 
+         Object x = rd.getAll();
          ArrayList<Result> list = (ArrayList<Result>) x;
 
          for (Result res : list) {
@@ -270,7 +273,7 @@ public class test {
          res.getR_Date());
          }
 
-        /**
+         /**
          * *************************** COURSE TESTING OK **************************
          */
         CourseDaoImple cd = new CourseDaoImple();
@@ -297,7 +300,7 @@ public class test {
          System.out.println("inserted");
          }
         
-      /*  
+         /*  
          if(cd.update(c))
          {
          System.out.println("updated");
@@ -311,25 +314,25 @@ public class test {
          }
                
          */
-        
-        
-         /*****************************      Submission TESTING OK ***************************/
+
+        /**
+         * *************************** Submission TESTING OK **************************
+         */
         SubmissionDaoImple sd = new SubmissionDaoImple();
         Submission su = new Submission();
 
-        
         su.setR_id(3);
         su.setS_ques_id(2);
         su.setSubmission("B");
         su.setEvaluation(1);
-       
-/*
-        if (sd.insert(su)) {
-            System.out.println("inserted");
-        }
+
+        /*
+         if (sd.insert(su)) {
+         System.out.println("inserted");
+         }
    
-    /*  
-       Object y = sd.getAll();
+         /*  
+         Object y = sd.getAll();
          ArrayList<Submission> list1 = (ArrayList<Submission>) y;
 
          for (Submission sub : list1) {
@@ -340,6 +343,5 @@ public class test {
          }
          
          /*********************************/
-
     }
 }

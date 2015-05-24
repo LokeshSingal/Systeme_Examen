@@ -23,41 +23,41 @@
              
               
                 <li>
-                  <a href="Controllor?action=dashbord">
+                  <a href="Controller?action=dashbord">
                     <i class="glyphicon glyphicon-dashboard"></i><span> Dashboard</span></a>
                   </li>
               <li>
-                <a href="Controllor?action=profile">
+                <a href="Controller?action=profile">
                   <i class="glyphicon glyphicon-user"></i><span> Profile</span>
                 </a></li>
             
             <li>
-              <a href="Controllor?action=exam_home">
+              <a href="Controller?action=exam_home">
                 <i class="fa fa-book"></i> <span>Exam</span> 
               </a>
             </li>
             <li>
-                <a href="Controllor?action=result">
+                <a href="Controller?action=result">
                   <i class="fa fa-check"></i><span> Result</span>
                 </a>
             </li>
             <li>
-                <a href="Controllor?action=question_bank">
+                <a href="Controller?action=question_bank">
                   <i class="fa fa-university"></i><span> Question Bank</span>
                 </a>
             </li>
             <li>
-                <a href="Controllor?action=import">
+                <a href="Controller?action=import">
                   <i class="fa fa-reply"></i><span> Import</span>
                 </a>
             </li>
             <li>
-                <a href="Controllor?action=export">
+                <a href="Controller?action=export">
                   <i class="fa fa-share"></i><span> Export</span>
                 </a>
             </li>
             <li>
-                <a href="Controllor?action=logout">
+                <a href="Controller?action=logout">
                   <i class="fa fa-power-off"></i><span>Logout</span>
                 </a>
             </li>

@@ -1,14 +1,20 @@
-<%-- 
+<%--
     Document   : Profile
     Created on : 21 May, 2015, 6:08:38 PM
     Author     : lokesh
 --%>
-
+<%@page import="com.system.examination.model.User_info"%>
+<%@page import="com.system.examination.model.Login"%>
+<% 
+    Login l=new Login();
+    l=(Login)request.getSession().getAttribute("User");
+      User_info user = (User_info) request.getAttribute("userP");
+%>
 <!DOCTYPE html>
 <html>
   <head>
     
-    <title>Kishan Ajudiya | Home</title>
+    <title> <%=l.getUser_username()%> | Home</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <%@include file="Head_css.jsp" %>
@@ -72,7 +78,7 @@
                   <label  style="color: #007bb6;font-size: large;">Name </label> 
               </div>
                 <div class="col-md-6">
-                  <label style="text-align: left;font-size: large ">   Kishan Ajudiya </label>
+                  <label style="text-align: left;font-size: large "> <%=l.getUser_username()%> </label>
               </div>
 
             </div>
@@ -83,7 +89,21 @@
                   <label  style="color: #007bb6;font-size: large;">Gender </label> 
               </div>
                 <div class="col-md-6">
-                  <label style="text-align: left;font-size: large ">    Male </label>
+                    <% 
+                    String gen = user.getGender();
+                    String gender="";
+                    if(gen.equals("M"))
+                    {
+                        gender = "Male";
+                    }
+                    else
+                    {
+                        gender= "female";
+                    }
+                    
+                    
+                    %>
+                    <label style="text-align: left;font-size: large "> <%=gender%>  </label>
               </div>
 
             </div>
@@ -114,7 +134,7 @@
                   <label  style="color: #007bb6;font-size: large;">Email </label> 
               </div>
                 <div class="col-md-6">
-                  <label style="text-align: left;font-size: large ">   123@gmail.com  </label>
+                  <label style="text-align: left;font-size: large ">  <%=l.getUser_email() %>  </label>
               </div>
 
             </div>
@@ -148,32 +168,53 @@
                 
                   <div class="box-body">
                       <form role="form" data-toggle="validator" action="Controllor?action=update_Profile" method="post">
-                    <div class="form-group">
+                   
+                          <% 
+                          
+                            if (user == null) { %>
+                            <tr><td colspan="2">Record Not Found</td></tr>
+                            <%
+                            } else {
+                             %>
+                        
+                          <div class="form-group">
+                        
                       <label> Profile Picture</label>
-                      <input type="file" class="form-control" id="profile_pic" name="profile_pic"/>
+                      <input type="file" class="form-control" id="profile_pic" name="profile_pic" />
                     </div>
                     <div class="form-group">
                       <label> Name</label>
-                      <input type="text" class="form-control" id="name" name="name" placeholder="Name" required/>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Name" value="<%= user.getName()%>" required/>
                     </div>
                       <div class="form-group" required>
                       <label>Gender</label>
                       <br>
-                      <input type="radio" name="sex" value="M">Male
+                      <%  
+                      if(gender.equals("Male"))
+                      {%>
+                      <input type="radio" name="sex" value="M" checked>Male
                       &nbsp;&nbsp;&nbsp;
-                      <input type="radio" name="sex" value="F">Female
+                      <input type="radio" name="sex" value="F" >Female
+                      <%}
+                      else{%>
+                          <input type="radio" name="sex" value="M" >Male
+                      &nbsp;&nbsp;&nbsp;
+                      <input type="radio" name="sex" value="F" checked >Female
+                     <% }
+                      %>
                     </div>
                     <div class="form-group">
                       <label>Education</label>
-                      <input type="text" class="form-control" id="education" name="education" placeholder="Education Degree" required/>
+                      <input type="text" class="form-control" id="education" name="education" value="<%= user.getProgram()%>" placeholder="Education Degree" required/>
                     </div>
                        <div class="form-group">
                       <label>Institute</label>
-                      <input type="text" class="form-control" id="institute" name="institute" placeholder="Institute" required/>
+                      <input type="text" class="form-control" id="institute" name="institute" value="<%= user.getInstitute_name()%>" placeholder="Institute" required/>
                     </div>
                    <div >
                     <button type="submit" class="btn btn-primary btn-primary pull-right">Update</button>
                   </div>
+                      <%}%>
                       </form>
 
                   
@@ -187,12 +228,15 @@
                 <div class="box-body">
                       <form role="form" data-toggle="validator" action="Controllor?action=update_Profile" method="post">
                       <div class="form-group">
+                          
                       <label>Username</label>
-                      <input type="text" class="form-control" id="username" name="username" placeholder="Username" required/>
+                      
+                       
+                      <input type="text" class="form-control" id="username" name="username" value="<%=l.getUser_username() %>" placeholder="Username" required/>
                     </div>
                     <div class="form-group">
                       <label>Old Password</label>
-                      <input type="password" class="form-control" id="old_pwd" name="old_password" placeholder="Old Password" required/>
+                      <input type="password" class="form-control" id="old_pwd" name="old_password"  required/>
                     </div>
                     
                     
@@ -208,7 +252,7 @@
                     <div class="help-block with-errors"></div>
                     <div class="form-group">
                       <label>Email</label>
-                      <input type="email" class="form-control" id="email" name="email" placeholder="Enter ..." data-error="email address is invalid" required/>
+                      <input type="email" class="form-control" id="email" name="email" value="<%=l.getUser_email()%>" placeholder="Enter ..." data-error="email address is invalid" required/>
                     </div>
                     <div class="help-block with-errors"></div>
                     <div >
