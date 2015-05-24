@@ -14,14 +14,14 @@ public class Controller extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-         System.out.print("123456");
+       //  System.out.print("123456");
         String theAction = request.getParameter("action");
         
         
         Action action = getActionFromConfig( theAction );
-        System.out.println(theAction);
+        //System.out.println(theAction);
         String view = action.execute(request, response);
-        System.out.println(view);
+        //System.out.println(view);
         RequestDispatcher rd = request.getRequestDispatcher(view);
         rd.forward(request, response);    
         

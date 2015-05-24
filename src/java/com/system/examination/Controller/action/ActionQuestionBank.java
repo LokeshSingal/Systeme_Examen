@@ -22,8 +22,7 @@ public abstract class ActionQuestionBank implements Action {
     protected Question_Bank getQuestionObjectRequest(HttpServletRequest req, HttpServletResponse resp){
     
         
-     //int Ques_id=req.getParameter(null);
-     //int Instructor_id;
+    
      String Q_desc = req.getParameter("ques_desc");
      String Question =  req.getParameter("ques");
      String OptionA = req.getParameter("optionA");
@@ -46,8 +45,8 @@ public abstract class ActionQuestionBank implements Action {
         question.setOptionD(OptionD);
         question.setSolution(Solution);
         
-     
-  
+  //      System.out.println(question.getCourse_id()+question.getLevel()+question.getOptionA()+question.getOptionB()+question.getOptionC()+question.getOptionD()+question.getQ_desc()+question.getSolution()+question.getInstructor_id());
+        
         return question;
     
     }
@@ -56,6 +55,6 @@ public abstract class ActionQuestionBank implements Action {
     {
         Question_BankDaoImple question = new Question_BankDaoImple();
         ArrayList<Question_Bank> ques = question.getAll();
-        req.setAttribute("ques", ques);
+        req.setAttribute("All_Questions", ques);
     }
 }
