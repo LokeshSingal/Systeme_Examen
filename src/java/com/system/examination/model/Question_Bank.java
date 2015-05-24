@@ -21,7 +21,15 @@ public class Question_Bank {
     private String Solution;
     private String Level;
     private String Course_id;
+    private String Marks;
 
+    public void setMarks(String Marks) {
+        this.Marks = Marks;
+    }
+
+    public String getMarks() {
+        return Marks;
+    }
     public int getQues_id() {
         return Ques_id;
     }

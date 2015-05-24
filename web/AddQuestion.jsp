@@ -3,8 +3,11 @@
     Created on : 20 May, 2015, 1:59:32 AM
     Author     : lokesh
 --%>
-
+<%@include file="User_Req_details.jsp" %>
 <!DOCTYPE html>
+<%
+    Question_Bank q=(Question_Bank) request.getAttribute("question");
+%>
 <html>
   <head>
     <meta charset="UTF-8">
@@ -52,7 +55,7 @@
 
         <!-- Code of middel part -->
       
-        <form role="form" data-toggle="validator" action="controllor?action=add_question">
+        <form role="form" data-toggle="validator" action="Controller" method="post">
       <div class="box box-primary" style="margin-left:40px;width: 70%; margin-top: 20px" >
                 <div class="box-header">
                   <h3 class="box-title">Question Detail</h3>
@@ -89,7 +92,7 @@
                 </div><!-- /.box-header -->
                 <div class='box-body pad'>
                   
-                    <textarea class="form-control" id="ques_desc" name="text_desc" rows="10" cols="80" >
+                    <textarea class="form-control" id="ques_desc" name="ques_desc" rows="10" cols="80" >
                                             
                     </textarea>
                   
@@ -97,23 +100,23 @@
               </div>
                     <div class="form-group">
                       <label>Question</label>
-                      <textarea class="form-control" id="ques" rows="3" placeholder="Question" required></textarea>
+                      <textarea class="form-control" id="ques" name="ques" rows="3" placeholder="Question" required></textarea>
                     </div>
                     <div class="form-group">
                       <label>Option A</label>
-                      <textarea class="form-control" id="optionA" rows="3" placeholder="Option A" required></textarea>
+                      <textarea class="form-control" id="optionA" rows="3" name="optionA" placeholder="Option A" required></textarea>
                     </div>
                     <div class="form-group">
                       <label>Option B</label>
-                      <textarea class="form-control" id="optionB" rows="3" placeholder="OptionB" required></textarea>
+                      <textarea class="form-control" id="optionB" rows="3" name="optionB" placeholder="OptionB" required></textarea>
                     </div>
                     <div class="form-group">
                       <label>Option C</label>
-                      <textarea class="form-control" id="optionC" rows="3" placeholder="OptionC" ></textarea>
+                      <textarea class="form-control" id="optionC" rows="3" name="optionC" placeholder="OptionC" ></textarea>
                     </div>
                     <div class="form-group">
                       <label>Option D</label>
-                      <textarea class="form-control" id="optionD" rows="3" placeholder="OptionD"></textarea>
+                      <textarea class="form-control" id="optionD" rows="3" name="optionD" placeholder="OptionD"></textarea>
                     </div>
                     <div class="form-group">
                       <label>Solution</label>
@@ -124,17 +127,21 @@
                         <option>D</option>
                       </select>
                     </div>
-                       <div class="form-group">
-                <label> Marks</label>
-                <input  class="form-control" type="text" id="marks" name="marks" required>
-                <div>
+                      
                       
                    
                   </div><!-- /.form group -->
                  
                   <div class="box-footer">
+                     <% if(q==null){ %>
                     <button type="submit" class="btn btn-primary pull-right">Add Qustion</button>
+                    <input type="hidden" name="action" value="add_question">
+                    <% } 
+                     else{
+                    %>
                     <button type="submit" class="btn btn-primary pull-right">Update Qustion</button>
+                    <input type="hidden" name="action" value="add_question">
+                    <% } %>
                   </div>
                   </div>
                   </div>
