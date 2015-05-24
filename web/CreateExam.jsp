@@ -3,10 +3,16 @@
     Created on : 20 May, 2015, 2:13:49 AM
     Author     : lokesh
 --%>
+<%@page import="com.system.examination.model.Exam_list"%>
 <%@page import="com.system.examination.model.Login"%>
 <% 
     Login l=new Login();
     l=(Login)request.getSession().getAttribute("User");
+    Exam_list el=(Exam_list)request.getAttribute("exam");
+    if(el==null)
+    {
+        el=new Exam_list();
+    }
     
 %>
 <!DOCTYPE html>

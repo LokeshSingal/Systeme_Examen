@@ -1,6 +1,9 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.system.examination.model.Login"%>
 <%@include file="User_Req_details.jsp" %>
-
+<%
+ArrayList<Exam_list> el=(ArrayList<Exam_list>) request.getAttribute("Exams");
+%>
 
 <!DOCTYPE html>
 <html>
@@ -49,7 +52,7 @@
                 <div class="icon">
                   <i class="glyphicon glyphicon-edit"></i>
                 </div>
-                <a href="Controller?action=create_exam" class="small-box-footer">
+                <a href="Controller?action=create_new_exam" class="small-box-footer">
                   Proceed <i class="fa fa-arrow-circle-right"></i>
                 </a>
               </div>
@@ -67,7 +70,7 @@
                     <thead>
                       <tr>
                         <th>ID</th>
-                      <th>Exam Description</th>
+                      <th>Exam Title</th>
                       <th>Number of Questions</th>
                       <th>Exam Date</th>
                       <th>Utility</th>
@@ -75,31 +78,31 @@
                     </thead>
                     <tbody>
                         <%
-                            for(int i=0;i<=5;i++) 
+                            for(Exam_list e:el) 
                                 { 
                         %>
                       <tr>
-                        <td>183</td>
-                      <td>Java</td>
-                      <td>60</td>
-                      <td>11/6/2015</td>
+                        <td><%=e.getExam_id()%></td>
+                      <td><%=e.getExam_title()%></td>
+                      <td><%=e.getNo_of_ques()%></td>
+                      <td><%=e.getDeclare_date()%></td>
                       <td><div class="box-body">
-                   <a class="btn btn-app" href="Controller?action=update_exam">
+                     <a class="btn btn-app" href="Controller?action=update_exam&e_id=<%=e.getExam_id()%>">
                     <i class="fa fa-edit" style="transform:translate(0px, -10px)" ></i> Edit
                   </a>
-                 <a class="btn btn-app" data-toggle="modal" href="#myModal1<%= i %>">
+                 <a class="btn btn-app" data-toggle="modal" href="#myModal1<%=e.getExam_id() %>">
                     <i class="fa fa-trash" style="transform:translate(0px, -10px)"></i> Delete
                   </a>
-                  <a class="btn btn-app" data-toggle="modal" href="#myModal<%= i %>">
+                  <a class="btn btn-app" data-toggle="modal" href="#myModal<%=e.getExam_id() %>">
                     <i class="fa fa-eye" style="transform:translate(0px, -10px)"></i> View
                   </a>
-                  <a class="btn btn-app" href="Controller?action=exam_preview">
+                  <a class="btn btn-app" href="Controller?action=exam_preview&e_id=<%=e.getExam_id()%>">
                     <i class="fa fa-play" style="transform:translate(0px, -10px)"></i> Preview
                   </a>
                 </div><!-- /.box-body --></td>
                       </tr>
                  
-<div class="modal fade" id="myModal<%= i %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="myModal<%=e.getExam_id() %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -108,24 +111,28 @@
       </div>
       <div class="modal-body">
           <div class="row" style="padding-left: 40px;padding-top: 10px;padding-right: 10px">
-          <label style="color:#fff; font-size:large;  width: 30%; background-color: rgb(108, 171, 227); height: 30px; text-align: right;" class="skin-blue"><b>Decs :</b> </label>
-          dfsadfasfd
+          <label style="color:#fff; font-size:large;  width: 30%; background-color: rgb(108, 171, 227); height: 30px; text-align: right;" class="skin-blue"><b>Title :</b> </label>
+          <%=e.getExam_title() %>
           </div>
           <div class="row" style="padding-left: 40px;padding-top: 10px;padding-right: 10px">
-          <label style="color:#fff; font-size:large;  width: 30%; background-color: rgb(108, 171, 227); height: 30px; text-align: right;" class="skin-blue"><b>Decs :</b> </label>
-          dfsadfasfd
+          <label style="color:#fff; font-size:large;  width: 30%; background-color: rgb(108, 171, 227); height: 30px; text-align: right;" class="skin-blue"><b>Description :</b> </label>
+          <%=e.getExam_desc() %>
           </div>
           <div class="row" style="padding-left: 40px;padding-top: 10px;padding-right: 10px">
-          <label style="color:#fff; font-size:large;  width: 30%; background-color: rgb(108, 171, 227); height: 30px; text-align: right;" class="skin-blue"><b>Decs :</b> </label>
-          dfsadfasfd
+          <label style="color:#fff; font-size:large;  width: 30%; background-color: rgb(108, 171, 227); height: 30px; text-align: right;" class="skin-blue"><b>No of Questions :</b> </label>
+          <%=e.getNo_of_ques() %>
           </div>
           <div class="row" style="padding-left: 40px;padding-top: 10px;padding-right: 10px">
-          <label style="color:#fff; font-size:large;  width: 30%; background-color: rgb(108, 171, 227); height: 30px; text-align: right;" class="skin-blue"><b>Decs :</b> </label>
-          dfsadfasfd
+          <label style="color:#fff; font-size:large;  width: 30%; background-color: rgb(108, 171, 227); height: 30px; text-align: right;" class="skin-blue"><b>Duration :</b> </label>
+          <%=e.getDuration() %>
           </div>
           <div class="row" style="padding-left: 40px;padding-top: 10px;padding-right: 10px">
-          <label style="color:#fff; font-size:large;  width: 30%; background-color: rgb(108, 171, 227); height: 30px; text-align: right;" class="skin-blue"><b>Decs :</b> </label>
-          dfsadfasfd
+          <label style="color:#fff; font-size:large;  width: 30%; background-color: rgb(108, 171, 227); height: 30px; text-align: right;" class="skin-blue"><b>Declare date :</b> </label>
+          <%=e.getDeclare_date() %>
+          </div>
+          <div class="row" style="padding-left: 40px;padding-top: 10px;padding-right: 10px">
+          <label style="color:#fff; font-size:large;  width: 30%; background-color: rgb(108, 171, 227); height: 30px; text-align: right;" class="skin-blue"><b>Total Marks :</b> </label>
+          <%=e.getTotal_marks()%>
           </div>
           </div>
       <div class="modal-footer">
@@ -136,7 +143,7 @@
   </div>
 </div>
                     
-   <div class="modal fade" id="myModal1<%= i %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal fade" id="myModal1<%=e.getExam_id() %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -144,11 +151,12 @@
         <h4 class="modal-title" id="myModalLabel">Delete</h4>
       </div>
       <div class="modal-body">
-        ...
+          Do you want to delete<b> <%=e.getExam_title()%></b>??????????
       </div>
       <div class="modal-footer">
-          <form action="Controller?action=detete_exam" method="post" >
-              <input type="hidden" name="test_id" value=" value of exam id">
+          <form action="Controller" method="post" >
+              <input type="hidden" name="action" value="delete_exam">
+              <input type="hidden" name="test_id" value="<%=e.getExam_id()%>">
         <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
         <button type="submit" class="btn btn-primary">Yes</button>
           </form>
@@ -165,7 +173,7 @@
                     <tfoot>
                       <tr>
                         <th>ID</th>
-                      <th>Exam Description</th>
+                      <th>Exam Title</th>
                       <th>Number of Questions</th>
                       <th>Exam Date</th>
                       <th>Utility</th>
