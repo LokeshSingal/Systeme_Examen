@@ -12,6 +12,8 @@
     if(q==null)
     {
         q=new Question_Bank();
+        out.println(q.getOptionA());
+        System.out.println(q.getOptionA());
     }
 %>
 <html>
@@ -83,9 +85,9 @@
                     <div class="form-group">
                       <label>Level</label>
                       <select class="form-control" id="level" name="level" required>
-                          <%if(q.getLevel().equals("Easy")) { %><option selected>Easy</option><%} else { %><option>Easy</option><% }%>
-                        <%if(q.getLevel().equals("Medium")) { %><option selected>Medium</option><%} else { %><option>Medium</option><% }%>
-                        <%if(q.getLevel().equals("Hard")) { %><option selected>Hard</option><%} else { %><option>Hard</option><% }%>
+                          <option>Easy</option>
+                          <option>Medium</option>
+                          <option>Hard</option>
                       </select>
                     </div>
                   <div class='box box-info collapsed-box' style="margin-left: 0px">
@@ -128,10 +130,10 @@
                     <div class="form-group">
                       <label>Solution</label>
                       <select class="form-control" id="solution" name="solution" required>
-                          <% if(q.getSolution().equals("A")){ %><option selected>A</option><% } else { %><option>A</option><% } %>
-                        <% if(q.getSolution().equals("B")){ %><option selected>B</option><% } else { %><option>B</option><% } %>
-                        <% if(q.getSolution().equals("C")){ %><option selected>C</option><% } else { %><option>C</option><% } %>
-                        <% if(q.getSolution().equals("D")){ %><option selected>D</option><% } else { %><option>D</option><% } %>
+                          <option>A</option>
+                          <option>B</option>
+                          <option>C</option>
+                          <option>D</option>
                       </select>
                     </div>
                       
@@ -148,6 +150,7 @@
                     %>
                     <button type="submit" class="btn btn-primary pull-right">Update Qustion</button>
                     <input type="hidden" name="action" value="update_question">
+                    <input type="hidden" name="q_id" value="<%=q.getQues_id() %>">
                     <% } %>
                   </div>
                   </div>

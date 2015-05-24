@@ -83,8 +83,14 @@ public class Question_BankDaoImple implements Question_BankDaoInterface{
                 "'," + "level = '" + q_bank.getLevel()+ 
                 "'," + "course_id = '" + q_bank.getCourse_id()+
                 "' " +"WHERE q_id = '" + q_bank.getQues_id()+ "' ";
-        
-        int n =stmt.executeUpdate(query);
+        int n=0;
+        try
+        {
+        n =stmt.executeUpdate(query);
+        }catch(Exception e)
+        {
+            System.out.println(e);
+        }
       if(n > 0 )
           return true;
       else
