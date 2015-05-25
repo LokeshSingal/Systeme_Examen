@@ -8,15 +8,21 @@ package com.system.examination.Controller.action;
 import com.system.examination.Controller.Action;
 import com.system.examination.DaoImplementaion.Exam_ListDaoImple;
 import com.system.examination.model.Exam_list;
+<<<<<<< HEAD
 import com.system.examination.model.Login;
+=======
+>>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
 import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Time;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+<<<<<<< HEAD
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
+=======
+>>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
 import java.util.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -38,6 +44,7 @@ public abstract class ActionExam implements Action {
         int no_of_ques = Integer.parseInt(req.getParameter("no_of_ques"));
         
         /************************************/
+<<<<<<< HEAD
         
         
         String s3 ="03:00:00";
@@ -68,6 +75,23 @@ public abstract class ActionExam implements Action {
         exam.setNo_of_ques(no_of_ques);
         exam.setShow_instant_result(Show_instant_result);
         exam.setTotal_marks(total_marks);
+=======
+        String string = "January 2, 2010";
+        DateFormat format = new SimpleDateFormat("MMMM d, yyyy", Locale.ENGLISH);
+        
+        Date date = (Date) format.parse(string);
+        System.out.println(date); // Sat Jan 02 00:00:00 GMT 2010
+        /****************************************************/
+        Time duration = (Time) format.parse(req.getParameter("time"));
+        
+        Date declare_date = (Date) format.parse(req.getParameter("exam_date"));
+        
+         int Show_instant_result = Integer.parseInt(req.getParameter("show_result"));
+        int total_marks = Integer.parseInt(req.getParameter("total_marks"));
+        String exam_username = req.getParameter("exam_name");
+        String exam_password = req.getParameter("exam_password");
+
+>>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
         return exam;
     }
     

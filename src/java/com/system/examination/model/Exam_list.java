@@ -17,6 +17,7 @@ public class Exam_list {
     
     private int exam_id;
     private int instructor_id;
+<<<<<<< HEAD
     private String exam_desc="";
     private String exam_title="";
     private int no_of_ques=0;
@@ -28,6 +29,18 @@ public class Exam_list {
     private String exam_password="";
 
     
+=======
+    private String exam_desc;
+    private String exam_title;
+    private int no_of_ques;
+    private Time duration;
+    private int Show_instant_result;
+    private Date declare_date;
+    private int total_marks;
+    private String exam_username;
+    private String exam_password;
+
+>>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
     public String getExam_title() {
         return exam_title;
     }

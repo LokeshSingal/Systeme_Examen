@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 <%@page import="com.system.examination.model.Exam_list"%>
 <%@page import="com.system.examination.model.Login"%>
 <% 
@@ -6,6 +7,9 @@
     //l=(Login)request.getSession().getAttribute("User");
     
 %>
+=======
+
+>>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
         <!-- Code of middel part -->
       <div class="box box-primary" style="width:100%;margin-left: 7px">
                 <div class="box-header">
@@ -40,7 +44,11 @@
                       <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
                       </div>
+<<<<<<< HEAD
                         <input type="text" value="<%=format.format(el.getDeclare_date())%>" class="form-control" id="exam_date" name="exam_date" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask placeholder="dd/mm/yyyy"/>
+=======
+                        <input type="text" value="<%=el.getDeclare_date()%>" class="form-control" id="exam_date" name="exam_date" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask placeholder="dd/mm/yyyy"/>
+>>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
                     </div><!-- /.input group -->
                   </div><!-- /.form group -->
                   <div class="form-group">

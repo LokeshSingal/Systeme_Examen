@@ -7,6 +7,7 @@ package com.system.examination.Controller.Delegate;
 
 import com.system.examination.Controller.action.*;
 import com.system.examination.Controller.Action;
+<<<<<<< HEAD
 import com.system.examination.DaoImplementaion.Exam_ListDaoImple;
 import com.system.examination.DaoImplementaion.Exam_QuestionDaoImple;
 import com.system.examination.DaoImplementaion.Question_BankDaoImple;
@@ -14,6 +15,8 @@ import com.system.examination.model.Exam_Questions;
 import com.system.examination.model.Exam_list;
 import com.system.examination.model.Question_Bank;
 import java.util.ArrayList;
+=======
+>>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -25,6 +28,7 @@ public class ExamUpdate implements Action {
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse res) {
+<<<<<<< HEAD
        
         if(req.getParameter("action").equals("edit_exam"))
         {
@@ -45,6 +49,12 @@ public class ExamUpdate implements Action {
                     return "CreateExam.jsp";
         }
         String view = "CreateExam.jsp";
+=======
+       String view = "CreateExam.jsp";
+       
+       
+       // code ************************/
+>>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
        
        return view;
     }

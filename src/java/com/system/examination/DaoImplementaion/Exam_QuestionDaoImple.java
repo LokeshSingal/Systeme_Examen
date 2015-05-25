@@ -92,7 +92,11 @@ public class Exam_QuestionDaoImple implements Exam_QuestionDaoInterface{
     public ArrayList<Exam_Questions> getAll() throws SQLException {
         
         try {
+<<<<<<< HEAD
         ArrayList<Exam_Questions> examques = new ArrayList<Exam_Questions>();
+=======
+             ArrayList<Exam_Questions> examques = new ArrayList<Exam_Questions>();
+>>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
         Exam_Questions e_ques;
         Statement stmt;
         stmt = con.createStatement();        
@@ -118,6 +122,7 @@ public class Exam_QuestionDaoImple implements Exam_QuestionDaoInterface{
         
         
     }
+<<<<<<< HEAD
 
     @Override
     public int getExamIdByTitle(String title) throws SQLException {
@@ -158,5 +163,7 @@ public class Exam_QuestionDaoImple implements Exam_QuestionDaoInterface{
              return null;
         
     }
+=======
+>>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
     
 }
