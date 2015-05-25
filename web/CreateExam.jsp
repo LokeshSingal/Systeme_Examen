@@ -3,16 +3,12 @@
     Created on : 20 May, 2015, 2:13:49 AM
     Author     : lokesh
 --%>
-<<<<<<< HEAD
 <%@page import="java.text.SimpleDateFormat"%>
-=======
->>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
 <%@page import="com.system.examination.model.Exam_list"%>
 <%@page import="com.system.examination.model.Login"%>
 <% 
     Login l=new Login();
     l=(Login)request.getSession().getAttribute("User");
-<<<<<<< HEAD
     //Exam_list el=(Exam_list)request.getAttribute("exam");
       
 %>
@@ -26,15 +22,6 @@
     SimpleDateFormat format = new SimpleDateFormat(pattern);
     //el.setDeclare_date((el.getDeclare_date()));
     %>
-=======
-    Exam_list el=(Exam_list)request.getAttribute("exam");
-    if(el==null)
-    {
-        el=new Exam_list();
-    }
-    
-%>
->>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
 <!DOCTYPE html>
 <html>
   <head>
@@ -73,25 +60,15 @@
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-<<<<<<< HEAD
             <li><a href="Controller?action=exam_home">Exam</a></li>
-=======
-            <li><a href="Controllor?action=exam_home">Exam</a></li>
->>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
             <li class="active">Create Exam</li>
           </ol>
         </section>
 
 
         <!-- Code of middel part -->
-<<<<<<< HEAD
        
         <form role="form" action="Controller" data-toggle="validator" method="post" data-to>
-=======
-                    
-
-        <form role="form" action="Controllor?action=create_exam" data-toggle="validator" method="post" data-to>
->>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
 
         <div class="container" >
 

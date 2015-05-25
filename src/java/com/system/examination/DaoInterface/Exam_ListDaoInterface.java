@@ -19,10 +19,6 @@ public interface Exam_ListDaoInterface {
     public boolean delete(int exam_id) throws SQLException;
     public boolean update(Exam_list el) throws SQLException;
     public ArrayList<Exam_list> getAll() throws SQLException;
-<<<<<<< HEAD
     public Exam_list findById(int id) throws SQLException;
-=======
-    
->>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
     
 }

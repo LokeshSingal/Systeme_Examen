@@ -127,11 +127,7 @@ public class Exam_ListDaoImple implements Exam_ListDaoInterface{
             
             el.setExam_id(rs.getInt("exam_id"));
             el.setInstructor_id(rs.getInt("instructor_id"));
-<<<<<<< HEAD
             el.setExam_title(rs.getString("exam_title"));
-=======
-            el.setExam_title("exam_title");
->>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
             el.setExam_desc(rs.getString("exam_desc"));
             el.setNo_of_ques(rs.getInt("no_of_ques"));
             el.setDuration(rs.getTime("duration"));
@@ -152,7 +148,6 @@ public class Exam_ListDaoImple implements Exam_ListDaoInterface{
             return null;
         }
     }
-<<<<<<< HEAD
 
     @Override
     public Exam_list findById(int id) throws SQLException {
@@ -176,7 +171,5 @@ public class Exam_ListDaoImple implements Exam_ListDaoInterface{
         }
         return el;
     }
-=======
->>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
     
 }

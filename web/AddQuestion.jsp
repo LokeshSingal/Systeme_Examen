@@ -5,7 +5,7 @@
 --%>
 <%@page import="java.util.ArrayList"%>
 <%@include file="User_Req_details.jsp" %>
-<!DOCTYPE html>
+
 <%
     ArrayList<Course> c1=(ArrayList<Course>)request.getAttribute("courses");
     Question_Bank q=(Question_Bank) request.getAttribute("question");
@@ -142,11 +142,7 @@
                   </div><!-- /.form group -->
                  
                   <div class="box-footer">
-<<<<<<< HEAD
                      <% if(q.getQues_id()==0){ %>
-=======
-                     <% if(q==null){ %>
->>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
                     <button type="submit" class="btn btn-primary pull-right">Add Qustion</button>
                     <input type="hidden" name="action" value="add_question">
                     <% } 

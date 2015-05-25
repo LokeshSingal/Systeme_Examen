@@ -33,11 +33,7 @@
                   
                   </div><!-- /.box-body -->
                    <div class="box-footer">
-<<<<<<< HEAD
                       <% if(el.getExam_id()==0) {%>
-=======
-                      <% if(el==null) {%>
->>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
                     <button type="submit" class="btn btn-success btn-lg pull-right">Create Exam</button>
                     <input type="hidden" name="action" value="insertexam">
                     <%} else { %>

@@ -5,45 +5,32 @@
  */
 package com.system.examination.Controller.Delegate;
 import com.system.examination.Controller.Action;
-<<<<<<< HEAD
 import com.system.examination.Controller.action.ActionExam;
 import com.system.examination.DaoImplementaion.Exam_ListDaoImple;
 import com.system.examination.DaoImplementaion.Exam_QuestionDaoImple;
-=======
->>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
 import com.system.examination.DaoImplementaion.Question_BankDaoImple;
 import com.system.examination.model.Exam_Questions;
 import com.system.examination.model.Exam_list;
 import com.system.examination.model.Question_Bank;
 import java.util.ArrayList;
-<<<<<<< HEAD
 import java.util.Enumeration;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
-=======
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
->>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
 
 /**
  *
  * @author lokesh
  */
-<<<<<<< HEAD
 public class ExamInsert extends ActionExam {
-=======
-public class ExamInsert implements Action {
->>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse res) {
         
                 if(req.getParameter("action").equals("create_new_exam"))
                 {
-<<<<<<< HEAD
                     //Exam_list el=null;
                     ArrayList<Exam_Questions> eq=null;
                    
@@ -53,22 +40,10 @@ public class ExamInsert implements Action {
                     Question_BankDaoImple qd=new Question_BankDaoImple();
                     ArrayList<Question_Bank> qb=qd.getAll();
                     
-=======
-                    Exam_list el=null;
-                    ArrayList<Exam_Questions> eq=null;
-                    ArrayList<Question_Bank> exam_question=null;
-                    req.setAttribute("exam", el);
-                    req.setAttribute("exam_question", eq);
-                    try{
-                    Question_BankDaoImple qd=new Question_BankDaoImple();
-                    ArrayList<Question_Bank> qb=qd.getAll();
-                      //  System.out.println(qb.get(0).getQuestion());
->>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
                     req.setAttribute("exam_questions_detail",qd.getAll());
                     }catch(Exception e){System.out.println(e);}
                     return "CreateExam.jsp";
                 }
-<<<<<<< HEAD
                 
                 if(req.getParameter("action").equals("insertexam"))
                 {
@@ -98,8 +73,6 @@ public class ExamInsert implements Action {
                     }
                 }
                 
-=======
->>>>>>> da6d8d8c909c53b96c24fb1fe2e98e325abe61e0
                 return "Exam_Home.jsp";
     }
     
