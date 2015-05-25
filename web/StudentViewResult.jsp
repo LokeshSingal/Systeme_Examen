@@ -50,7 +50,7 @@
       
              <%
         
-             ArrayList<Result> list = (ArrayList<Result>)request.getAttribute("courselist");
+             ArrayList<Result> list = (ArrayList<Result>)request.getAttribute("result");
         
         
         %>
@@ -71,18 +71,28 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <%
+                            int n = 0;
+                            for(Result r : list)
+                            {
+                                n++;
+                                %>
+                                
+                            
                       <tr>
-                        <td>n</td>
-                      <td>JAVA</td>
-                      <td>11/2/2015</td>
-                      <td>70</td>
+                        <td><%=n%></td>
+                      <td><%=r.getR_exam_id()%></td>
+                      <td><%=r.getR_Date()%></td>
+                      <td><%=r.getScore()%></td>
                       <td><div class="box-body">
                               <a class="btn btn-app" href="Controller?action=student_view_exam_result&id=test_id">
                     <i class="fa fa-eye" style="transform:translate(0px, -10px)"></i> View
                   </a>
                 </div><!-- /.box-body --></td>                   
                       </tr>
-                      
+                      <%
+                            }
+                      %>
                     </tbody>
                     <tfoot>
                       <tr>

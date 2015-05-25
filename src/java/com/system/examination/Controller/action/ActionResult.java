@@ -7,8 +7,10 @@ package com.system.examination.Controller.action;
 
 import com.system.examination.Controller.Action;
 import com.system.examination.DaoImplementaion.ResultDaoImple;
+import com.system.examination.model.Login;
 import com.system.examination.model.Result;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -39,4 +41,18 @@ public abstract class ActionResult implements Action {
         req.setAttribute("result", result);
     }
     
+    protected void putResultById(HttpServletRequest req,HttpServletResponse resp) throws ClassNotFoundException, SQLException
+    {
+        
+          Login us = new Login();
+         
+         
+        us =(Login) req.getSession().getAttribute("User");
+        int user_id = us.getUser_id();
+        ResultDaoImple rd = new ResultDaoImple();
+        
+        ArrayList<Result> result = rd.findById(user_id);
+        
+        req.setAttribute("result", result);
+    }
 }

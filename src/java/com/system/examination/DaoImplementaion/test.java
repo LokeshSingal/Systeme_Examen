@@ -255,6 +255,12 @@ public class test {
         r.setR_user_id(1);
         r.setR_Date(dt);
         r.setScore(81);
+        
+        /*
+        if(rd.findById(2)!=null)
+        {
+            System.out.println("found");;
+        }
         /*
          if (rd.insert(r)) {
          System.out.println("inserted");

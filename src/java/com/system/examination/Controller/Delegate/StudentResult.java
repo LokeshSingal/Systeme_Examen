@@ -13,22 +13,29 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author lokesh
  */
-public class StudentResult extends ActionResult{
+public class StudentResult extends ActionResult {
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse res) {
-       
-        if(req.getParameter("action").equals("studentresult"))
-        {
+
+        if (req.getParameter("action").equals("studentresult")) {
+           
+             try {
+
+                putResultById(req, res);
+                return "StudentViewResult.jsp";
+
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+
             return "StudentViewResult.jsp";
         }
-        if(req.getParameter("action").equalsIgnoreCase("student_view_exam_result"))
-        {
-            return "StudentViewExamResult.jsp";
+        if (req.getParameter("action").equals("student_view_exam_result")) {
+           
         }
-            
-        
-        return "StudentViewResult.jsp";
+
+        return "StudentViewExamResult.jsp";
     }
-    
+
 }

@@ -4,8 +4,12 @@
     Author     : lokesh
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.system.examination.model.Question_Bank"%>
 <!DOCTYPE html>
-
+<%
+ ArrayList<Question_Bank> aq=(ArrayList<Question_Bank>)request.getAttribute("exam_questions_detail");
+ %>
             <div class="box box-primary" style="width:100%;margin-left: 7px">
                 <div class="box-header">
                   <h3 class="box-title">Add Questions</h3>
@@ -15,29 +19,29 @@
                     <thead>
                       <tr>
                          <th>Sr. No.</th>
-                        <th>Question Description</th>
+                        <th>Question</th>
                         <th>Answer</th>
                         <th>Course</th>
+                        <th>Marks</th>
                         <th>Add </th>
                         </tr>
                     </thead>
                     <tbody>
                         <%
-                            int[] s=new int[5];
-                        for(int i=0;i<5;i++)
+                         int i=1;
+                        for(Question_Bank q:aq)
                         {
                            %>
                       <tr>
-                          <td>no</td>
-                        <td>Trident</td>
-                        <td>Internet
-                          Explorer 4.0</td>
-                        <td>Win 95+</td>
-                        
+                          <td><%=i%></td>
+                          <td><%=q.getQuestion()%></td>
+                          <td><%=q.getSolution()%></td>
+                          <td><%=q.getCourse_id()%></td>
+                          <td><input type="text" name="marks" id="marks"></td>
                         <td><div class="form-group">
                             <label>
                                 
-                                <input type="checkbox" class="flat-red" id="qid" name="qid" value="<%=i%>" />
+                                <input type="checkbox" class="flat-red" id="qid" name="qid" value="<%=q.getQues_id()%>" />
                             
                             </label>
                                 
@@ -46,15 +50,17 @@
                         </td>
                       </tr>
                       <%
+                      i++;
                         }
                       %>
                     </tbody>
                     <tfoot>
                       <tr>
                           <th>Sr. No.</th>
-                        <th>Question Description</th>
+                        <th>Question</th>
                         <th>Answer</th>
                         <th>Course</th>
+                        <th>Marks</th>
                         <th>Add </th>
                         </tr>
                     </tfoot>

@@ -19,5 +19,6 @@ public interface ResultDaoInterface {
     //public boolean delete(int exam_id) throws SQLException;
     //public boolean update(Result result) throws SQLException;
     public ArrayList<Result> getAll() throws SQLException;
+     public ArrayList<Result> findById(int user_id) throws SQLException;
     
 }

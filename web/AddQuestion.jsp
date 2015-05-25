@@ -12,7 +12,7 @@
     if(q==null)
     {
         q=new Question_Bank();
-        out.println(q.getOptionA());
+        //out.println(q.getOptionA());
         System.out.println(q.getOptionA());
     }
 %>
