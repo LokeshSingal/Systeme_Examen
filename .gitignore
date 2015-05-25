@@ -1,3 +1,4 @@
 build.xml
 nbproject/
 mysql-connector.jar
+src/conf/MANIFEST.MF
